@@ -1,0 +1,4 @@
+c:\users\sf30-2016\documents\visual studio 2010\Projects\SF-30-2016\SF-30-2016\bin\Debug\SF-30-2016.exe
+c:\users\sf30-2016\documents\visual studio 2010\Projects\SF-30-2016\SF-30-2016\bin\Debug\SF-30-2016.pdb
+c:\users\sf30-2016\documents\visual studio 2010\Projects\SF-30-2016\SF-30-2016\obj\x86\Debug\SF-30-2016.exe
+c:\users\sf30-2016\documents\visual studio 2010\Projects\SF-30-2016\SF-30-2016\obj\x86\Debug\SF-30-2016.pdb
