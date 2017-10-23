@@ -43,9 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Person.cs" />
+    <Compile Include="Modeli\Akcija.cs" />
+    <Compile Include="Modeli\DodatnaUsluga.cs" />
+    <Compile Include="Modeli\Korisnik.cs" />
+    <Compile Include="Modeli\Namestaj.cs" />
+    <Compile Include="Test\Person.cs" />
+    <Compile Include="Modeli\ProdajaNamestaja.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Modeli\Salon.cs" />
+    <Compile Include="Modeli\TipNamestaja.cs" />
+    <Compile Include="Test\Test1.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
