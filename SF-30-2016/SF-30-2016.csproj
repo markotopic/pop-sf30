@@ -47,6 +47,7 @@
     <Compile Include="Modeli\DodatnaUsluga.cs" />
     <Compile Include="Modeli\Korisnik.cs" />
     <Compile Include="Modeli\Namestaj.cs" />
+    <Compile Include="Modeli\Projekat.cs" />
     <Compile Include="Test\Person.cs" />
     <Compile Include="Modeli\ProdajaNamestaja.cs" />
     <Compile Include="Program.cs" />
@@ -54,6 +55,11 @@
     <Compile Include="Modeli\Salon.cs" />
     <Compile Include="Modeli\TipNamestaja.cs" />
     <Compile Include="Test\Test1.cs" />
+    <Compile Include="Util\GenericSerializer.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Data\namestaj.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
