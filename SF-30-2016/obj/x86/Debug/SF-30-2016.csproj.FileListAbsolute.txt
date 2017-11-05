@@ -8,3 +8,9 @@ C:\SF-30-2016\SF-30-2016\obj\x86\Debug\SF-30-2016.exe
 C:\SF-30-2016\SF-30-2016\obj\x86\Debug\SF-30-2016.pdb
 C:\SF-30-2016\SF-30-2016\bin\Debug\SF-30-2016.exe
 C:\SF-30-2016\SF-30-2016\bin\Debug\SF-30-2016.pdb
+F:\New folder\SF-30-2016\obj\x86\Debug\SF-30-2016.csprojResolveAssemblyReference.cache
+F:\New folder\SF-30-2016\obj\x86\Debug\SF-30-2016.csproj.CoreCompileInputs.cache
+F:\New folder\SF-30-2016\obj\x86\Debug\SF-30-2016.exe
+F:\New folder\SF-30-2016\obj\x86\Debug\SF-30-2016.pdb
+F:\New folder\SF-30-2016\bin\Debug\SF-30-2016.exe
+F:\New folder\SF-30-2016\bin\Debug\SF-30-2016.pdb

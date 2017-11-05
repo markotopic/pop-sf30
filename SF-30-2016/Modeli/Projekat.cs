@@ -26,7 +26,7 @@ namespace SF_30_2016.Modeli
             set
             {
                 this.namestaj = value;
-                GenericSerializer.Serialize<Namestaj>("namestaj.xml", this.namestaj);  }
+                GenericSerializer.Serialize<Namestaj>("namestaj.xml", namestaj);  }
         }
 
 
