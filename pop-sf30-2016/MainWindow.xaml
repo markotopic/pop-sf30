@@ -1,0 +1,20 @@
+﻿<Window x:Class="pop_sf30_2016.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pop_sf30_2016"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+        <ListBox Name="listBoxNamestaj" Grid.Row="0" FontSize="15"></ListBox>
+        <Button Grid.Row="1" Content="Dodaj" Width="50" Height="40" FontSize="10" Margin="25,34,617,35" Click="DodajNamestaj"></Button>
+        <Button Grid.Row="1" Content="Izmeni" Width="50" Height="40" FontSize="10" Margin="105,34,537,35"></Button>
+        <Button Grid.Row="1" Content="Obrisi" Width="50" Height="40" FontSize="10" Margin="181,34,461,35" RenderTransformOrigin="1.537,0.396"></Button>
+        <Button x:Name="Izlaz" Grid.Row="1" Content="Izlaz" Width="50" Height="40" FontSize="10" Margin="254,34,388,35" Click="Izlaz_Click"></Button>
+    </Grid>
+</Window>

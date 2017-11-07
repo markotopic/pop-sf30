@@ -1,0 +1,17 @@
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\SF-30-2016.csprojResolveAssemblyReference.cache
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\MainWindow.g.cs
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\UI\NamestajWindow.g.cs
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\App.g.cs
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\pop-sf30-2016_MarkupCompile.cache
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\pop-sf30-2016_MarkupCompile.lref
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\pop-sf30-2016.exe
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\pop-sf30-2016.pdb
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\bin\Debug\pop-sf30-2016.exe.config
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\bin\Debug\pop-sf30-2016.exe
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\bin\Debug\pop-sf30-2016.pdb
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\MainWindow.baml
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\UI\NamestajWindow.baml
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\pop-sf30-2016.g.resources
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\pop_sf30_2016.Properties.Resources.resources
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\SF-30-2016.csproj.GenerateResource.Cache
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\SF-30-2016.csproj.CoreCompileInputs.cache
