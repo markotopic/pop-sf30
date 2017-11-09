@@ -45,9 +45,6 @@ namespace SF_30_2016.Util
             }
         }
 
-        internal static void Serialize<T>(string v, List<T> namestaj)
-        {
-            throw new NotImplementedException();
-        }
+     
     }
 }

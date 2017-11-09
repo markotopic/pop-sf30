@@ -11,9 +11,10 @@ namespace SF_30_2016.Modeli
     {
         public static Projekat Instace { get; private set; } = new Projekat();
         public List<TipNamestaja> TipoviNamestaja { get; set; }
-        public List<Namestaj> Namestaj { get; set; }
+        
         public int MyProperty { get; set; }
 
+        public List<Namestaj> Namestaj { get; set; }
         private List<Namestaj> namestaj = new List<Namestaj>();
 
         public List<Namestaj> Naamestaj
