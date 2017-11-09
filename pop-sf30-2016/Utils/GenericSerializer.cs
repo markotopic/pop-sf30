@@ -9,7 +9,7 @@ namespace SF_30_2016.Util
 {
     public class GenericSerializer
     {
-        public static void Serialize<T>(string fileName, T objToSerialize) where T : class
+        public static void Serialize<T>(string fileName, List<T> objToSerialize) where T : class
         {
             try
             {
