@@ -8,13 +8,13 @@
         Title="MainWindow" Height="500" Width="700">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="23*"/>
-            <RowDefinition Height="7*"/>
+            <RowDefinition Height="177*"/>
+            <RowDefinition Height="58*"/>
         </Grid.RowDefinitions>
         <ListBox Name="listBoxNamestaj" Grid.Row="0" FontSize="15"></ListBox>
-        <Button Grid.Row="1" Content="Dodaj" Width="50" Height="40" FontSize="10" Margin="25,34,617,35" Click="DodajNamestaj"></Button>
-        <Button Grid.Row="1" Content="Izmeni" Width="50" Height="40" FontSize="10" Margin="105,34,537,35"></Button>
-        <Button Grid.Row="1" Content="Obrisi" Width="50" Height="40" FontSize="10" Margin="181,34,461,35" RenderTransformOrigin="1.537,0.396"></Button>
-        <Button x:Name="Izlaz" Grid.Row="1" Content="Izlaz" Width="50" Height="40" FontSize="10" Margin="254,34,388,35" Click="Izlaz_Click"></Button>
+        <Button Grid.Row="1" Content="Dodaj" FontSize="10" Margin="25,35,613,37" Click="DodajNamestaj"/>
+        <Button Grid.Row="1" Content="Izmeni" FontSize="10" Margin="105,35,527,37"/>
+        <Button Grid.Row="1" Content="Obrisi" FontSize="10" Margin="181,35,454,37" RenderTransformOrigin="1.537,0.396"/>
+        <Button x:Name="Izlaz" Grid.Row="1" Content="Izlaz" FontSize="10" Margin="254,35,374,37" Click="Izlaz_Click"/>
     </Grid>
 </Window>

@@ -11,11 +11,11 @@ namespace SF_30_2016.Modeli
     {
         public static Projekat Instace { get; private set; } = new Projekat();
         public List<TipNamestaja> TipoviNamestaja { get; set; }
-        
-        public int MyProperty { get; set; }
 
-        public List<Namestaj> Namestaj { get; set; }
-        private List<Namestaj> namestaj = new List<Namestaj>();
+
+        public List<Namestaj> Namestaj;
+
+        public List<Namestaj> namestaj = new List<Namestaj>();
 
         public List<Namestaj> Naamestaj
         {
@@ -27,8 +27,41 @@ namespace SF_30_2016.Modeli
             set
             {
                 namestaj = value;
-                GenericSerializer.Serialize<Namestaj>("namestaj.xml", namestaj);  }
+                GenericSerializer.Serialize<Namestaj>("namestaj.xml", namestaj); }
         }
+
+        public List<Korisnik> korisnici;
+        public List<Korisnik> Korisnici
+        {
+            get
+            {
+                this.Korisnici = GenericSerializer.DeSerialize<Korisnik>("korisnici.xml");
+                return Korisnici;
+            }
+            set
+            {
+                this.korisnici = value;
+                GenericSerializer.Serialize<Korisnik>("korisnici.xml", korisnici);
+            }
+        }
+
+        public List<TipNamestaja> tipnamestaja;
+        public List<TipNamestaja> TipNamestaja
+        {
+            get
+            {
+                this.TipNamestaja = GenericSerializer.DeSerialize<TipNamestaja>("tipNamestaja.xml");
+                return TipNamestaja;
+            }
+            set
+            {
+                this.TipNamestaja = value;
+                GenericSerializer.Serialize<TipNamestaja>("tipNamestaja.xml", TipNamestaja);
+            }
+        }
+
+
+
 
     }
 }

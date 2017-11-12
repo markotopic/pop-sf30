@@ -25,9 +25,10 @@ namespace pop_sf30_2016
     {
         public MainWindow()
         {
+            
             InitializeComponent();
 
-            OsveziPrikaz();
+            //OsveziPrikaz();
 
         }
 
@@ -35,7 +36,7 @@ namespace pop_sf30_2016
         {
             listBoxNamestaj.Items.Clear();
 
-            foreach (var namestaj in Projekat.Instace.Naamestaj)
+            foreach (var namestaj in Projekat.Instace.Korisnici)
             {
                 listBoxNamestaj.Items.Add(namestaj);
             }

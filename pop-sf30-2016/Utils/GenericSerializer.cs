@@ -32,7 +32,7 @@ namespace SF_30_2016.Util
             try
             {
                 var serializer = new XmlSerializer(typeof(List<T>));
-                using (var sw = new StreamReader($@"../../Data/{ fileName}"))
+                using (var sw = new StreamReader($@"../../Data/{fileName}"))
                 {
                     return (List<T>)serializer.Deserialize(sw);
                 }
@@ -45,6 +45,6 @@ namespace SF_30_2016.Util
             }
         }
 
-     
+        
     }
 }

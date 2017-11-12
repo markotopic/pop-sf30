@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Korisnik xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>1</Id>
+  <Ime>Marko</Ime>
+  <Prezime>Topic</Prezime>
+  <KorisnickoIme>mare</KorisnickoIme>
+  <Sifra>123</Sifra>
+  <TipKorisnika>Administrator</TipKorisnika>
+  <Obrisan>false</Obrisan>
+</Korisnik>

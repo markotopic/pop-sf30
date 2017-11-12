@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\App.xaml
-2-2054523422
+3-568861859
 
-15-65084058
+161716541668
 131569487696
-MainWindow.xaml;UI\NamestajWindow.xaml;
+MainWindow.xaml;UI\LoginWindow.xaml;UI\NamestajWindow.xaml;
 
 False
 

@@ -8,20 +8,20 @@
         Title="NamestajWindow" Height="300" Width="300">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="34*"/>
-            <ColumnDefinition Width="47*"/>
-            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="117*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="24*"/>
             <RowDefinition Height="22*"/>
-            <RowDefinition Height="27*"/>
-            <RowDefinition Height="196*"/>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="205*"/>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Content="Naziv" HorizontalAlignment="Left" Width="50"></Label>
-        <TextBox Grid.Row="0" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbNazi"/>
+        <TextBox Grid.Row="0" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbNazi" Width="10"/>
 
-        <Button Content="Sacuvaj" HorizontalAlignment="Right"/>
-        <Button Content="Izlaz" HorizontalAlignment="Right"/>
+        <Button Content="Sacuvaj" HorizontalAlignment="Right" Margin="0,173,22,0" Grid.Row="3" Width="46"/>
+        <Button Content="Izlaz" HorizontalAlignment="Right" RenderTransformOrigin="1.009,0.562" Grid.Column="1" Margin="0,173,41,0" Grid.Row="3" Width="53"/>
     </Grid>
 </Window>

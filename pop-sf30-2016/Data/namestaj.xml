@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Namestaj xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Id>2</Id>
-  <Naziv>Regal</Naziv>
-  <Sifra>SF sifra za regale</Sifra>
-  <JedinicnaCena>18</JedinicnaCena>
-  <KolicinaUMagacinu>4</KolicinaUMagacinu>
-  <TipNamestaja>
-    <Id>2</Id>
-    <Naziv>Regal</Naziv>
-    <JedinicnaCena>0</JedinicnaCena>
-    <KolicinaUMagacinu>0</KolicinaUMagacinu>
-  </TipNamestaja>
-  <Akcija>false</Akcija>
-</Namestaj><?xml version="1.0" encoding="utf-8"?>
-<Namestaj xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<Namestaj>
   <Id>1</Id>
   <Naziv>Sofa</Naziv>
   <Sifra>SF sifra za sofe</Sifra>
@@ -22,20 +7,6 @@
   <TipNamestaja>
     <Id>1</Id>
     <Naziv>Sofa</Naziv>
-    <JedinicnaCena>0</JedinicnaCena>
-    <KolicinaUMagacinu>0</KolicinaUMagacinu>
-  </TipNamestaja>
-  <Akcija>false</Akcija>
-</Namestaj><?xml version="1.0" encoding="utf-8"?>
-<Namestaj xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Id>2</Id>
-  <Naziv>Regal</Naziv>
-  <Sifra>SF sifra za regale</Sifra>
-  <JedinicnaCena>18</JedinicnaCena>
-  <KolicinaUMagacinu>4</KolicinaUMagacinu>
-  <TipNamestaja>
-    <Id>2</Id>
-    <Naziv>Regal</Naziv>
     <JedinicnaCena>0</JedinicnaCena>
     <KolicinaUMagacinu>0</KolicinaUMagacinu>
   </TipNamestaja>

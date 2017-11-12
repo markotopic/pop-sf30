@@ -17,7 +17,6 @@ namespace SF_30_2016.Model
         public string PIB { get; set; }
         public int MaticniBroj { get; set; }
         public string BrojZiroRacuna { get; set; }
-        public string WebSajt { get; set; }
         public bool Obrisan { get; set; }
         
     }
