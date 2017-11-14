@@ -13,8 +13,8 @@ namespace SF_30_2016.Util
         {
             try
             {
-                var serializer = new XmlSerializer(typeof(T));
-                using (var sw = new StreamWriter($@"../../Data/{ fileName}", append : true))
+                var serializer = new XmlSerializer(typeof(List<T>));
+                using (var sw = new StreamWriter($@"../../Data/{ fileName}"))
                 {
                     serializer.Serialize(sw, objToSerialize);
                 }
@@ -38,7 +38,7 @@ namespace SF_30_2016.Util
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;

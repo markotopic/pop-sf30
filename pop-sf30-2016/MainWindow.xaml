@@ -14,7 +14,7 @@
         <ListBox Name="listBoxNamestaj" Grid.Row="0" FontSize="15"></ListBox>
         <Button Grid.Row="1" Content="Dodaj" FontSize="10" Margin="25,35,613,37" Click="DodajNamestaj"/>
         <Button Grid.Row="1" Content="Izmeni" FontSize="10" Margin="105,35,527,37"/>
-        <Button Grid.Row="1" Content="Obrisi" FontSize="10" Margin="181,35,454,37" RenderTransformOrigin="1.537,0.396"/>
+        <Button Grid.Row="1" Content="Obrisi" FontSize="10" Margin="181,35,454,37" RenderTransformOrigin="1.537,0.396" Click="Button_Click"/>
         <Button x:Name="Izlaz" Grid.Row="1" Content="Izlaz" FontSize="10" Margin="254,35,374,37" Click="Izlaz_Click"/>
     </Grid>
 </Window>

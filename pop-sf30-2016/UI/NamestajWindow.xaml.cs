@@ -54,6 +54,7 @@ namespace pop_sf30_2016.UI
 
                     var noviNamestaj = new Namestaj()
                     {
+                        Id = postojeciNamestaj.Count + 1,
                         Naziv = tbNazi.Text
                     };
                     postojeciNamestaj.Add(noviNamestaj);

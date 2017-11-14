@@ -122,7 +122,9 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Data\korisnici.xml" />
+    <Resource Include="Data\korisnici.xml">
+      <SubType>Designer</SubType>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Data\akcije.xml" />

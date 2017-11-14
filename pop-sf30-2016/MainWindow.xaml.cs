@@ -28,17 +28,23 @@ namespace pop_sf30_2016
             
             InitializeComponent();
 
-            //OsveziPrikaz();
+            OsveziPrikaz();
 
         }
+
+        public bool namestajObirsan { get; set; }
 
         private void OsveziPrikaz()
         {
             listBoxNamestaj.Items.Clear();
 
-            foreach (var namestaj in Projekat.Instace.Korisnici)
+            foreach (var namestaj in Projekat.Instace.Naamestaj)
             {
-                listBoxNamestaj.Items.Add(namestaj);
+                if (namestajObirsan == false )
+                {
+                    listBoxNamestaj.Items.Add(namestaj);
+                }
+                
             }
 
             listBoxNamestaj.SelectedIndex = 0;
@@ -65,6 +71,31 @@ namespace pop_sf30_2016
 
             var namestajProzor = new NamestajWindow(selektovaniNamestaj, NamestajWindow.Operacija.IZMENA);
             namestajProzor.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var izabraniNamestaj = (Namestaj)listBoxNamestaj.SelectedItem;
+            var staraListaNamestaj = Projekat.Instace.Naamestaj;
+
+            if (MessageBox.Show($"Da li ste sigurni da zelite da obrisete: { izabraniNamestaj.Naziv}?", "Brisanje", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                Namestaj namestaj = null;
+
+                foreach (var n in staraListaNamestaj)
+                {
+                    if (n.Id == izabraniNamestaj.Id)
+                    {
+                        namestaj = n;
+                    }
+                }
+                
+                namestaj.Obrisan = true;
+
+                Projekat.Instace.Naamestaj = staraListaNamestaj;
+
+                OsveziPrikaz();
+            }
         }
     }
 }
