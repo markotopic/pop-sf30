@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ProdajaNamestaja xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Id>1</Id>
-  <BrojKomada>2</BrojKomada>
-  <DatumProdaje>0001-01-01T00:00:00</DatumProdaje>
-  <BrojRacuna>111-222-333</BrojRacuna>
-  <DodatneUsluge>
+<ArrayOfProdajaNamestaja xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProdajaNamestaja>
     <Id>1</Id>
-    <Naziv>Dostava</Naziv>
-    <CenaUsluge>2000</CenaUsluge>
-    <Obrisan>false</Obrisan>
-  </DodatneUsluge>
-  <UkupnaCena>22000</UkupnaCena>
-  <Kupac>Marko</Kupac>
-</ProdajaNamestaja>
+    <BrojKomada>2</BrojKomada>
+    <DatumProdaje>0001-01-01T00:00:00</DatumProdaje>
+    <BrojRacuna>111-222-333</BrojRacuna>
+    <DodatneUsluge>
+      <Id>1</Id>
+      <Naziv>Dostava</Naziv>
+      <CenaUsluge>2000</CenaUsluge>
+      <Obrisan>false</Obrisan>
+    </DodatneUsluge>
+    <UkupnaCena>22000</UkupnaCena>
+  </ProdajaNamestaja>
+</ArrayOfProdajaNamestaja>

@@ -13,7 +13,7 @@
       <KolicinaUMagacinu>0</KolicinaUMagacinu>
     </TipNamestaja>
     <Akcija>false</Akcija>
-    <Obrisan>true</Obrisan>
+    <Obrisan>false</Obrisan>
   </Namestaj>
   <Namestaj>
     <Id>2</Id>
@@ -29,5 +29,85 @@
     </TipNamestaja>
     <Akcija>false</Akcija>
     <Obrisan>true</Obrisan>
+  </Namestaj>
+  <Namestaj>
+    <Id>3</Id>
+    <Naziv>Sto</Naziv>
+    <JedinicnaCena>0</JedinicnaCena>
+    <KolicinaUMagacinu>0</KolicinaUMagacinu>
+    <Akcija>false</Akcija>
+    <Obrisan>false</Obrisan>
+  </Namestaj>
+  <Namestaj>
+    <Id>4</Id>
+    <Naziv>Stolica</Naziv>
+    <Sifra>5</Sifra>
+    <JedinicnaCena>123</JedinicnaCena>
+    <KolicinaUMagacinu>55</KolicinaUMagacinu>
+    <Akcija>false</Akcija>
+    <Obrisan>false</Obrisan>
+  </Namestaj>
+  <Namestaj>
+    <Id>5</Id>
+    <Naziv>Stolica</Naziv>
+    <Sifra>5</Sifra>
+    <JedinicnaCena>123</JedinicnaCena>
+    <KolicinaUMagacinu>55</KolicinaUMagacinu>
+    <Akcija>false</Akcija>
+    <Obrisan>false</Obrisan>
+  </Namestaj>
+  <Namestaj>
+    <Id>6</Id>
+    <Naziv>Stolica</Naziv>
+    <Sifra>5</Sifra>
+    <JedinicnaCena>123</JedinicnaCena>
+    <KolicinaUMagacinu>55</KolicinaUMagacinu>
+    <Akcija>false</Akcija>
+    <Obrisan>false</Obrisan>
+  </Namestaj>
+  <Namestaj>
+    <Id>7</Id>
+    <Naziv>Stolica</Naziv>
+    <Sifra>5</Sifra>
+    <JedinicnaCena>123</JedinicnaCena>
+    <KolicinaUMagacinu>55</KolicinaUMagacinu>
+    <Akcija>false</Akcija>
+    <Obrisan>false</Obrisan>
+  </Namestaj>
+  <Namestaj>
+    <Id>8</Id>
+    <Naziv>Stolica</Naziv>
+    <Sifra>5</Sifra>
+    <JedinicnaCena>123</JedinicnaCena>
+    <KolicinaUMagacinu>55</KolicinaUMagacinu>
+    <Akcija>false</Akcija>
+    <Obrisan>false</Obrisan>
+  </Namestaj>
+  <Namestaj>
+    <Id>9</Id>
+    <Naziv>Stolica</Naziv>
+    <Sifra>5</Sifra>
+    <JedinicnaCena>123</JedinicnaCena>
+    <KolicinaUMagacinu>55</KolicinaUMagacinu>
+    <Akcija>false</Akcija>
+    <Obrisan>false</Obrisan>
+  </Namestaj>
+  <Namestaj>
+    <Id>10</Id>
+    <Naziv>Stolica</Naziv>
+    <Sifra>5</Sifra>
+    <JedinicnaCena>123</JedinicnaCena>
+    <KolicinaUMagacinu>55</KolicinaUMagacinu>
+    <Akcija>false</Akcija>
+    <Obrisan>false</Obrisan>
+  </Namestaj>
+  <Namestaj>
+    <Id>11</Id>
+    <Naziv>Stolica</Naziv>
+    <Sifra>5</Sifra>
+    <JedinicnaCena>123</JedinicnaCena>
+    <KolicinaUMagacinu>55</KolicinaUMagacinu>
+    <Akcija>false</Akcija>
+    <Obrisan>false</Obrisan>
   </Namestaj>
 </ArrayOfNamestaj>

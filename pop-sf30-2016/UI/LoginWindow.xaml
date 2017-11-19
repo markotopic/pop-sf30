@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="LoginWindow" Height="300" Width="300">
     <Grid>
-        
+        <Label Content="Username" Margin="10,10,159,214"/>
+        <TextBox Name="tbUsername" Margin="10,56,142,188" />
+        <Label Content="Password" Margin="0,95,201,142"/>
+        <TextBox Name="tbPassword" Margin="10,133,142,110" />
+
+        <Button Content="Login" Margin="30,222,173,10" Click="LogIn"/>
+        <Button Content="Exit" Margin="169,222,24,10"/>
     </Grid>
 </Window>

@@ -44,27 +44,34 @@ namespace pop_sf30_2016.UI
             tbNazi.Text = namestaj.Naziv;
         }
 
-        private void SacuvajIzmene(object sender, Operacija operacija)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            List<Namestaj> postojeciNamestaj = Projekat.Instace.Namestaj;
+            List<Namestaj> postojeciNamestaj = Projekat.Instace.Naamestaj;
 
             switch (operacija)
             {
                 case Operacija.DODAVANJE:
-
                     var noviNamestaj = new Namestaj()
                     {
                         Id = postojeciNamestaj.Count + 1,
-                        Naziv = tbNazi.Text
+                        Naziv = tbNazi.Text,
+                        Sifra = tbSifra.Text,
+                        JedinicnaCena = Double.Parse(tbJedinicnaCena.Text),
+                        KolicinaUMagacinu = int.Parse(tbKolicinaUMagacinu.Text)
+                        
                     };
                     postojeciNamestaj.Add(noviNamestaj);
                     break;
+
                 case Operacija.IZMENA:
                     foreach (var n in Projekat.Instace.Naamestaj)
                     {
                         if (n.Id == namestaj.Id)
                         {
                             n.Naziv = tbNazi.Text;
+                            n.Sifra = tbSifra.Text;
+                            n.JedinicnaCena = Double.Parse(tbJedinicnaCena.Text);
+                            n.KolicinaUMagacinu = int.Parse(tbKolicinaUMagacinu.Text);
                             break;
                         }
                     }

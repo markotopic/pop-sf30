@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SF_30_2016.Model;
+using SF_30_2016.Modeli;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,29 @@ namespace pop_sf30_2016.UI
     /// </summary>
     public partial class LoginWindow : Window
     {
+
         public LoginWindow()
         {
             InitializeComponent();
+        }
+
+        private void LogIn(object sender, RoutedEventArgs e)
+        {
+
+            foreach (var i in Projekat.Instace.Korisnici)
+            {
+                if (i.KorisnickoIme == tbUsername.Text && i.Sifra == tbPassword.Text)
+                {
+                    var main = new MainWindow();
+                    main.Show();
+                    break;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
         }
     }
 }

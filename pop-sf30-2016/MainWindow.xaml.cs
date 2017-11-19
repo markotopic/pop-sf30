@@ -32,15 +32,13 @@ namespace pop_sf30_2016
 
         }
 
-        public bool namestajObirsan { get; set; }
-
         private void OsveziPrikaz()
         {
             listBoxNamestaj.Items.Clear();
 
             foreach (var namestaj in Projekat.Instace.Naamestaj)
             {
-                if (namestajObirsan == false )
+                if (namestaj.Obrisan == false )
                 {
                     listBoxNamestaj.Items.Add(namestaj);
                 }
