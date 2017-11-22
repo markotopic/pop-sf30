@@ -1,6 +1,7 @@
 ﻿using pop_sf30_2016.UI;
 using SF_30_2016.Model;
 using SF_30_2016.Modeli;
+using SF_30_2016.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,24 +29,9 @@ namespace pop_sf30_2016
             
             InitializeComponent();
 
-            OsveziPrikaz();
+            dgNamestaj.ItemsSource = Projekat.Instace.Namestaj;
+            dgNamestaj.IsSynchronizedWithCurrentItem = true;
 
-        }
-
-        private void OsveziPrikaz()
-        {
-            listBoxNamestaj.Items.Clear();
-
-            foreach (var namestaj in Projekat.Instace.Naamestaj)
-            {
-                if (namestaj.Obrisan == false )
-                {
-                    listBoxNamestaj.Items.Add(namestaj);
-                }
-                
-            }
-
-            listBoxNamestaj.SelectedIndex = 0;
         }
 
         private void Izlaz_Click(object sender, RoutedEventArgs e)
@@ -65,7 +51,7 @@ namespace pop_sf30_2016
 
         private void IzmeniNamestaj(object sender, RoutedEventArgs e)
         {
-            var selektovaniNamestaj = (Namestaj)listBoxNamestaj.SelectedItem;
+            var selektovaniNamestaj = (Namestaj)dgNamestaj.SelectedItem;
 
             var namestajProzor = new NamestajWindow(selektovaniNamestaj, NamestajWindow.Operacija.IZMENA);
             namestajProzor.Show();
@@ -73,26 +59,23 @@ namespace pop_sf30_2016
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var izabraniNamestaj = (Namestaj)listBoxNamestaj.SelectedItem;
-            var staraListaNamestaj = Projekat.Instace.Naamestaj;
+            var izabraniNamestaj = (Namestaj)dgNamestaj.SelectedItem;
+            
 
             if (MessageBox.Show($"Da li ste sigurni da zelite da obrisete: { izabraniNamestaj.Naziv}?", "Brisanje", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                Namestaj namestaj = null;
 
-                foreach (var n in staraListaNamestaj)
+                foreach (var n in Projekat.Instace.Namestaj)
                 {
                     if (n.Id == izabraniNamestaj.Id)
                     {
-                        namestaj = n;
+                        n.Obrisan = true;
+                        break;
                     }
                 }
-                
-                namestaj.Obrisan = true;
 
-                Projekat.Instace.Naamestaj = staraListaNamestaj;
+                GenericSerializer.Serialize("namestaj.xml", Projekat.Instace.Namestaj);
 
-                OsveziPrikaz();
             }
         }
     }

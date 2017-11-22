@@ -1,5 +1,6 @@
 ﻿using SF_30_2016.Model;
 using SF_30_2016.Modeli;
+using SF_30_2016.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,45 +34,54 @@ namespace pop_sf30_2016.UI
         public NamestajWindow(Namestaj namestaj, Operacija operacija)
         {
             InitializeComponent();
-            InicijalizujVrednosti(namestaj, operacija);
-        }
 
-        private void InicijalizujVrednosti(Namestaj namestaj, Operacija operacija)
-        {
             this.namestaj = namestaj;
             this.operacija = operacija;
 
-            tbNazi.Text = namestaj.Naziv;
+            cbTipNamestaja.ItemsSource = Projekat.Instace.tipnamestaja;
+
+            tbNazi.DataContext = namestaj;
+            cbTipNamestaja.DataContext = namestaj;
+
         }
+
+       
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            List<Namestaj> postojeciNamestaj = Projekat.Instace.Naamestaj;
+
+            var prazanNamestaj = new Namestaj();
+            var listaNamestaja = Projekat.Instace.Namestaj;
+            //List<Namestaj> postojeciNamestaj = Projekat.Instace.Namestaj;
 
             switch (operacija)
             {
                 case Operacija.DODAVANJE:
-                    var noviNamestaj = new Namestaj()
-                    {
-                        Id = postojeciNamestaj.Count + 1,
-                        Naziv = tbNazi.Text,
-                        Sifra = tbSifra.Text,
-                        JedinicnaCena = Double.Parse(tbJedinicnaCena.Text),
-                        KolicinaUMagacinu = int.Parse(tbKolicinaUMagacinu.Text)
+                    namestaj.Id = listaNamestaja.Count + 1;
+                    listaNamestaja.Add(namestaj);
+                    
+                        //Id = postojeciNamestaj.Count + 1,
                         
-                    };
-                    postojeciNamestaj.Add(noviNamestaj);
+                        //Sifra = tbSifra.Text,
+                        //JedinicnaCena = Double.Parse(tbJedinicnaCena.Text),
+                        //KolicinaUMagacinu = int.Parse(tbKolicinaUMagacinu.Text)
+                        
+                    
+                    //postojeciNamestaj.Add(noviNamestaj);
                     break;
 
                 case Operacija.IZMENA:
-                    foreach (var n in Projekat.Instace.Naamestaj)
+                    foreach (var n in listaNamestaja)
                     {
                         if (n.Id == namestaj.Id)
                         {
-                            n.Naziv = tbNazi.Text;
-                            n.Sifra = tbSifra.Text;
-                            n.JedinicnaCena = Double.Parse(tbJedinicnaCena.Text);
-                            n.KolicinaUMagacinu = int.Parse(tbKolicinaUMagacinu.Text);
+                            n.TipNamestajaId = namestaj.TipNamestajaId;
+                            n.Naziv = namestaj.Naziv;
+                            n.JedinicnaCena = namestaj.JedinicnaCena;
+                            
+                            //n.Sifra = tbSifra.Text;
+                            //n.JedinicnaCena = Double.Parse(tbJedinicnaCena.Text);
+                            //n.KolicinaUMagacinu = int.Parse(tbKolicinaUMagacinu.Text);
                             break;
                         }
                     }
@@ -79,7 +89,8 @@ namespace pop_sf30_2016.UI
                 default:
                     break;
             }
-            Projekat.Instace.Naamestaj = postojeciNamestaj;
+            GenericSerializer.Serialize("namestaj.xml", listaNamestaja);
+            //Projekat.Instace.Namestaj = postojeciNamestaj;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -9,11 +10,11 @@ namespace SF_30_2016.Util
 {
     public class GenericSerializer
     {
-        public static void Serialize<T>(string fileName, List<T> objToSerialize) where T : class
+        public static void Serialize<T>(string fileName, ObservableCollection<T> objToSerialize) where T : class
         {
             try
             {
-                var serializer = new XmlSerializer(typeof(List<T>));
+                var serializer = new XmlSerializer(typeof(ObservableCollection<T>));
                 using (var sw = new StreamWriter($@"../../Data/{ fileName}"))
                 {
                     serializer.Serialize(sw, objToSerialize);
@@ -27,14 +28,14 @@ namespace SF_30_2016.Util
             }
         }
 
-        public static List<T> DeSerialize<T>(string fileName) where T : class
+        public static ObservableCollection<T> DeSerialize<T>(string fileName) where T : class
         {
             try
             {
-                var serializer = new XmlSerializer(typeof(List<T>));
+                var serializer = new XmlSerializer(typeof(ObservableCollection<T>));
                 using (var sw = new StreamReader($@"../../Data/{fileName}"))
                 {
-                    return (List<T>)serializer.Deserialize(sw);
+                    return (ObservableCollection<T>)serializer.Deserialize(sw);
                 }
 
             }

@@ -37,3 +37,5 @@ D:\pop-sf30-master\pop-sf30-2016\obj\Debug\UI\LoginWindow.baml
 C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\UI\LoginWindow.g.cs
 C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\UI\LoginWindow.baml
 D:\pop-sf30-master\pop-sf30-2016\obj\Debug\UI\EntitetiWindow.g.cs
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\UI\EntitetiWindow.g.cs
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\UI\EntitetiWindow.baml

@@ -137,7 +137,9 @@
     <Resource Include="Data\akcije.xml" />
     <Resource Include="Data\dodatneUsluge.xml" />
     <Resource Include="Data\prodajaNamestaja.xml" />
-    <Resource Include="Data\tipNamestaja.xml" />
+    <Resource Include="Data\tipNamestaja.xml">
+      <SubType>Designer</SubType>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

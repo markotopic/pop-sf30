@@ -21,7 +21,7 @@
             <RowDefinition Height="76*"/>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Content="Naziv" HorizontalAlignment="Left" Width="75"></Label>
-        <TextBox Grid.Row="0" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbNazi" Width="100"/>
+        <TextBox Grid.Row="0" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbNazi" Text="{Binding Path=Naziv}" Width="100"/>
 
         <Label Grid.Row="1" Grid.Column="0" Content="Sifra" HorizontalAlignment="Left" Width="70"/>
         <TextBox Grid.Row="1" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbSifra" Width="100"/>
@@ -33,7 +33,7 @@
         <TextBox Grid.Row="3" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbKolicinaUMagacinu" Width="100"/>
 
         <Label Grid.Row="4" Grid.Column="0" Content="Tip" HorizontalAlignment="Left" Width="75"/>
-        <TextBox Grid.Row="4" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbTipNamestaja" Width="100"/>
+        <ComboBox Grid.Row="4" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="cbTipNamestaja" Width="100" SelectedItem="{Binding Path=TipNamestaja}"/>
 
         <Button Content="Sacuvaj" HorizontalAlignment="Right" Margin="0,126,22,0" Grid.Row="5" Width="46" Click="Button_Click"/>
         <Button Content="Izlaz" HorizontalAlignment="Right" RenderTransformOrigin="1.009,0.562" Grid.Column="1" Margin="0,126,41,0" Grid.Row="5" Width="53"/>

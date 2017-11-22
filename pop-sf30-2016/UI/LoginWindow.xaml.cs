@@ -30,12 +30,12 @@ namespace pop_sf30_2016.UI
         private void LogIn(object sender, RoutedEventArgs e)
         {
 
-            foreach (var i in Projekat.Instace.Korisnici)
+            foreach (var i in Projekat.Instace.Korisnik)
             {
                 if (i.KorisnickoIme == tbUsername.Text && i.Sifra == tbPassword.Text)
                 {
                     var main = new MainWindow();
-                    main.Show();
+                    main.ShowDialog();
                     break;
                 }
                 else

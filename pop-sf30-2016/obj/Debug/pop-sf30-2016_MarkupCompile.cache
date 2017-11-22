@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\pop-sf30-master\pop-sf30-2016\obj\Debug\
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\
 pop_sf30_2016
 none
 false
 DEBUG;TRACE
-D:\pop-sf30-master\pop-sf30-2016\App.xaml
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\App.xaml
 4-1761918051
 
 171944579792
 131569487696
 MainWindow.xaml;UI\EntitetiWindow.xaml;UI\LoginWindow.xaml;UI\NamestajWindow.xaml;
 
-True
+False
 
