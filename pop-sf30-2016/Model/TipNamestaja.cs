@@ -11,28 +11,19 @@ namespace SF_30_2016.Model
     {
         private int id;
         private string naziv;
-        private double jedinicnaCena;
-        private int kolicinaUMagacinu;
-        private int tipNamestajaId;
+        private bool obrisan;
 
-        public int TipNamestajaId
+        //private int tipNamestajaId;
+        //public int TipNamestajaId
+        //{
+        //    get { return tipNamestajaId; }
+        //    set { tipNamestajaId = value; OnPropertyChanged("TipNamestajaId"); }
+        //}
+
+        public bool Obrisan
         {
-            get { return tipNamestajaId; }
-            set { tipNamestajaId = value; OnPropertyChanged("TipNamestajaId"); }
-        }
-
-
-        public int KolicinaUMagacinu
-        {
-            get { return kolicinaUMagacinu; }
-            set { kolicinaUMagacinu = value; OnPropertyChanged("KolicinaUMagacinu"); }
-        }
-
-
-        public double JedinicnaCena
-        {
-            get { return jedinicnaCena; }
-            set { jedinicnaCena = value; OnPropertyChanged("JedinicnaCena"); }
+            get { return obrisan; }
+            set { obrisan = value; OnPropertyChanged("Obrisan"); }
         }
 
 

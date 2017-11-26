@@ -31,6 +31,8 @@ namespace pop_sf30_2016
 
             dgNamestaj.ItemsSource = Projekat.Instace.Namestaj;
             dgNamestaj.IsSynchronizedWithCurrentItem = true;
+            
+        
 
         }
 

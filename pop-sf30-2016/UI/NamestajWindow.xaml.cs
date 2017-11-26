@@ -42,34 +42,22 @@ namespace pop_sf30_2016.UI
 
             tbNazi.DataContext = namestaj;
             cbTipNamestaja.DataContext = namestaj;
-
+            tbJedinicnaCena.DataContext = namestaj;
+            tbSifra.DataContext = namestaj;
         }
-
-       
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-            var prazanNamestaj = new Namestaj();
+            
             var listaNamestaja = Projekat.Instace.Namestaj;
-            //List<Namestaj> postojeciNamestaj = Projekat.Instace.Namestaj;
 
             switch (operacija)
             {
                 case Operacija.DODAVANJE:
                     namestaj.Id = listaNamestaja.Count + 1;
                     listaNamestaja.Add(namestaj);
-                    
-                        //Id = postojeciNamestaj.Count + 1,
-                        
-                        //Sifra = tbSifra.Text,
-                        //JedinicnaCena = Double.Parse(tbJedinicnaCena.Text),
-                        //KolicinaUMagacinu = int.Parse(tbKolicinaUMagacinu.Text)
-                        
-                    
-                    //postojeciNamestaj.Add(noviNamestaj);
+                    this.Close();
                     break;
-
                 case Operacija.IZMENA:
                     foreach (var n in listaNamestaja)
                     {
@@ -78,10 +66,8 @@ namespace pop_sf30_2016.UI
                             n.TipNamestajaId = namestaj.TipNamestajaId;
                             n.Naziv = namestaj.Naziv;
                             n.JedinicnaCena = namestaj.JedinicnaCena;
-                            
-                            //n.Sifra = tbSifra.Text;
-                            //n.JedinicnaCena = Double.Parse(tbJedinicnaCena.Text);
-                            //n.KolicinaUMagacinu = int.Parse(tbKolicinaUMagacinu.Text);
+                            n.Sifra = namestaj.Sifra;
+                            this.Close();
                             break;
                         }
                     }
@@ -90,7 +76,11 @@ namespace pop_sf30_2016.UI
                     break;
             }
             GenericSerializer.Serialize("namestaj.xml", listaNamestaja);
-            //Projekat.Instace.Namestaj = postojeciNamestaj;
+        }
+
+        private void Izlaz_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

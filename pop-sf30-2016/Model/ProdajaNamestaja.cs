@@ -17,5 +17,6 @@ namespace SF_30_2016.Model
         public double UkupnaCena { get; set; }
         public string Kupac { get; set; }
         public List<Namestaj> NamestajZaProdaju { get; set; }
+        
     }
 }

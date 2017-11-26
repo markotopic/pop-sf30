@@ -6,4 +6,10 @@
     <CenaUsluge>2000</CenaUsluge>
     <Obrisan>false</Obrisan>
   </DodatnaUsluga>
+  <DodatnaUsluga>
+    <Id>2</Id>
+    <Naziv>Montaza</Naziv>
+    <CenaUsluge>1000</CenaUsluge>
+    <Obrisan>false</Obrisan>
+  </DodatnaUsluga>
 </ArrayOfDodatnaUsluga>

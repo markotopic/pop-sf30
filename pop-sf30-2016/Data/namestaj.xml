@@ -1,91 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfNamestaj xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Namestaj>
+    <Sifra>S1</Sifra>
     <JedinicnaCena>28</JedinicnaCena>
     <Obrisan>false</Obrisan>
     <TipNamestajaId>1</TipNamestajaId>
-    <Cena>100</Cena>
     <Naziv>Sofa</Naziv>
     <Id>1</Id>
   </Namestaj>
   <Namestaj>
+    <Sifra>R1</Sifra>
     <JedinicnaCena>18</JedinicnaCena>
-    <Obrisan>true</Obrisan>
-    <TipNamestajaId>0</TipNamestajaId>
-    <Cena>0</Cena>
+    <Obrisan>false</Obrisan>
+    <TipNamestajaId>2</TipNamestajaId>
     <Naziv>Regal</Naziv>
     <Id>2</Id>
   </Namestaj>
   <Namestaj>
-    <JedinicnaCena>0</JedinicnaCena>
-    <Obrisan>false</Obrisan>
-    <TipNamestajaId>0</TipNamestajaId>
-    <Cena>0</Cena>
+    <Sifra>S1</Sifra>
+    <JedinicnaCena>38</JedinicnaCena>
+    <Obrisan>true</Obrisan>
+    <TipNamestajaId>1</TipNamestajaId>
     <Naziv>Sto</Naziv>
     <Id>3</Id>
-  </Namestaj>
-  <Namestaj>
-    <JedinicnaCena>123</JedinicnaCena>
-    <Obrisan>false</Obrisan>
-    <TipNamestajaId>0</TipNamestajaId>
-    <Cena>0</Cena>
-    <Naziv>Stolica</Naziv>
-    <Id>4</Id>
-  </Namestaj>
-  <Namestaj>
-    <JedinicnaCena>123</JedinicnaCena>
-    <Obrisan>false</Obrisan>
-    <TipNamestajaId>0</TipNamestajaId>
-    <Cena>0</Cena>
-    <Naziv>Stolica</Naziv>
-    <Id>5</Id>
-  </Namestaj>
-  <Namestaj>
-    <JedinicnaCena>123</JedinicnaCena>
-    <Obrisan>false</Obrisan>
-    <TipNamestajaId>0</TipNamestajaId>
-    <Cena>0</Cena>
-    <Naziv>Stolica</Naziv>
-    <Id>6</Id>
-  </Namestaj>
-  <Namestaj>
-    <JedinicnaCena>123</JedinicnaCena>
-    <Obrisan>false</Obrisan>
-    <TipNamestajaId>1</TipNamestajaId>
-    <Cena>0</Cena>
-    <Naziv>Stolica</Naziv>
-    <Id>7</Id>
-  </Namestaj>
-  <Namestaj>
-    <JedinicnaCena>123</JedinicnaCena>
-    <Obrisan>false</Obrisan>
-    <TipNamestajaId>0</TipNamestajaId>
-    <Cena>0</Cena>
-    <Naziv>Stolica</Naziv>
-    <Id>8</Id>
-  </Namestaj>
-  <Namestaj>
-    <JedinicnaCena>123</JedinicnaCena>
-    <Obrisan>false</Obrisan>
-    <TipNamestajaId>0</TipNamestajaId>
-    <Cena>0</Cena>
-    <Naziv>Stolica</Naziv>
-    <Id>9</Id>
-  </Namestaj>
-  <Namestaj>
-    <JedinicnaCena>123</JedinicnaCena>
-    <Obrisan>false</Obrisan>
-    <TipNamestajaId>2</TipNamestajaId>
-    <Cena>0</Cena>
-    <Naziv>Stolica</Naziv>
-    <Id>10</Id>
-  </Namestaj>
-  <Namestaj>
-    <JedinicnaCena>123</JedinicnaCena>
-    <Obrisan>false</Obrisan>
-    <TipNamestajaId>0</TipNamestajaId>
-    <Cena>0</Cena>
-    <Naziv>Stolica</Naziv>
-    <Id>11</Id>
   </Namestaj>
 </ArrayOfNamestaj>

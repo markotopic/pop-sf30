@@ -1,0 +1,15 @@
+﻿<Window x:Class="pop_sf30_2016.UI.IzmenaEntiteta.IzmenaProdajeNamestajaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pop_sf30_2016.UI.IzmenaEntiteta"
+        mc:Ignorable="d"
+        Title="IzmenaProdajeNamestajaWindow" Height="600" Width="700">
+    <Grid>
+
+        <DataGrid AutoGenerateColumns="True" Height="209" HorizontalAlignment="Left" Margin="0,361,0,0" Name="dgDodatnaUsluga" VerticalAlignment="Top" Width="316" IsReadOnly="True" />
+        <TextBlock FontSize="20" Height="29" HorizontalAlignment="Left" Name="tbDodatnaUsluga" Text="Dodatne usluge" VerticalAlignment="Top" Width="159" Margin="0,327,0,0" RenderTransformOrigin="0.478,-0.724" />
+
+    </Grid>
+</Window>

@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfKorisnik xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Korisnik>
-    <Id>1</Id>
-    <Ime>Marko</Ime>
-    <Prezime>Topic</Prezime>
-    <KorisnickoIme>mare</KorisnickoIme>
-    <Sifra>123</Sifra>
-    <TipKorisnika>Administrator</TipKorisnika>
     <Obrisan>false</Obrisan>
+    <TipKorisnika>Administrator</TipKorisnika>
+    <Sifra>123</Sifra>
+    <KorisnickoIme>mare</KorisnickoIme>
+    <Prezime>Topic</Prezime>
+    <Ime>Marko</Ime>
+    <Id>1</Id>
+  </Korisnik>
+  <Korisnik>
+    <Obrisan>true</Obrisan>
+    <TipKorisnika>Prodavac</TipKorisnika>
+    <Sifra>1</Sifra>
+    <KorisnickoIme>pera</KorisnickoIme>
+    <Prezime>Petrovic</Prezime>
+    <Ime>Djoka</Ime>
+    <Id>2</Id>
   </Korisnik>
 </ArrayOfKorisnik>

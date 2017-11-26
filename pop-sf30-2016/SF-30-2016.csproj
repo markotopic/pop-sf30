@@ -58,11 +58,41 @@
     <Compile Include="UI\EntitetiWindow.xaml.cs">
       <DependentUpon>EntitetiWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\IzmenaEntiteta\IzmenaAkcijaWindow.xaml.cs">
+      <DependentUpon>IzmenaAkcijaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IzmenaEntiteta\IzmenaDodatneUslugeWindow.xaml.cs">
+      <DependentUpon>IzmenaDodatneUslugeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IzmenaEntiteta\IzmenaKorisnikaWindow.xaml.cs">
+      <DependentUpon>IzmenaKorisnikaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IzmenaEntiteta\IzmenaProdajeNamestajaWindow.xaml.cs">
+      <DependentUpon>IzmenaProdajeNamestajaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IzmenaEntiteta\IzmenaTipaNamestajaWindow.xaml.cs">
+      <DependentUpon>IzmenaTipaNamestajaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\NamestajWindow.xaml.cs">
       <DependentUpon>NamestajWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PrikazEntiteta\AkcijaWindow.xaml.cs">
+      <DependentUpon>AkcijaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PrikazEntiteta\DodatnaUslugaWindow.xaml.cs">
+      <DependentUpon>DodatnaUslugaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PrikazEntiteta\KorisnikWindow.xaml.cs">
+      <DependentUpon>KorisnikWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PrikazEntiteta\ProdajaNamestajaWindow.xaml.cs">
+      <DependentUpon>ProdajaNamestajaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PrikazEntiteta\TipNamestajaWindow.xaml.cs">
+      <DependentUpon>TipNamestajaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\GenericSerializer.cs" />
     <Page Include="MainWindow.xaml">
@@ -81,11 +111,51 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\IzmenaEntiteta\IzmenaAkcijaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\IzmenaEntiteta\IzmenaDodatneUslugeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\IzmenaEntiteta\IzmenaKorisnikaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\IzmenaEntiteta\IzmenaProdajeNamestajaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\IzmenaEntiteta\IzmenaTipaNamestajaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\NamestajWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\PrikazEntiteta\AkcijaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\PrikazEntiteta\DodatnaUslugaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\PrikazEntiteta\KorisnikWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\PrikazEntiteta\ProdajaNamestajaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\PrikazEntiteta\TipNamestajaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -140,6 +210,9 @@
     <Resource Include="Data\tipNamestaja.xml">
       <SubType>Designer</SubType>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\tipKorisnika.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

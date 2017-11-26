@@ -1,0 +1,42 @@
+﻿<Window x:Class="pop_sf30_2016.UI.IzmenaEntiteta.IzmenaKorisnikaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pop_sf30_2016.UI.IzmenaEntiteta"
+        mc:Ignorable="d"
+        Title="IzmenaKorisnikaWindow" Height="300" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="117*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="76*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Ime" HorizontalAlignment="Left" Width="75"></Label>
+        <TextBox Grid.Row="0" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbIme" Text="{Binding Path=Ime}" Width="100"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Prezime" HorizontalAlignment="Left" Width="70"/>
+        <TextBox Grid.Row="1" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbPrezime" Width="100" Text="{Binding Path=Prezime}"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Korisnicko ime" HorizontalAlignment="Left" Width="75"/>
+        <TextBox Grid.Row="2" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbKorisnickoIme" Width="100" Text="{Binding Path=KorisnickoIme}"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Sifra" HorizontalAlignment="Left" Width="75"/>
+        <TextBox Grid.Row="3" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbSifra" Width="100" Text="{Binding Path=Sifra}"/>
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Tip" HorizontalAlignment="Left" Width="75"/>
+        <ComboBox Grid.Row="4" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="cbTipKorisnika" Width="100" SelectedItem="{Binding Path=TipKorisnika}"/>
+
+        <Button Content="Sacuvaj" HorizontalAlignment="Right" Margin="0,126,22,0" Grid.Row="5" Width="46" Click="Button_Click"/>
+        <Button Content="Izlaz" HorizontalAlignment="Right" RenderTransformOrigin="1.009,0.562" Grid.Column="1" Margin="0,126,41,0" Grid.Row="5" Width="53" Click="Izlaz_Click"/>
+    </Grid>
+</Window>

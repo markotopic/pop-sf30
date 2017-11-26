@@ -13,11 +13,11 @@ namespace SF_30_2016.Model
     {
         private int id;
         private string naziv;
-        private double cena;
         private int tipNamestajaId;
         private bool obrisan;
         private int jedinicnaCena;
         private TipNamestaja tipNamestaja;
+        private string sifra;
 
         [XmlIgnore]
         public TipNamestaja TipNamestaja
@@ -36,6 +36,12 @@ namespace SF_30_2016.Model
                 TipNamestajaId = tipNamestaja.Id;
                 OnPropertyChanged("TipNamestaja");
             }
+        }
+
+        public string Sifra
+        {
+            get { return sifra; }
+            set { sifra = value; OnPropertyChanged("Sifra"); }
         }
 
 
@@ -60,11 +66,11 @@ namespace SF_30_2016.Model
         }
 
 
-        public double Cena
-        {
-            get { return cena; }
-            set { cena = value; OnPropertyChanged("Cena"); }
-        }
+        //public double Cena
+        //{
+        //    get { return cena; }
+        //    set { cena = value; OnPropertyChanged("Cena"); }
+        //}
 
 
         public string Naziv

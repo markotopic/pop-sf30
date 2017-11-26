@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pop_sf30_2016.UI"
         mc:Ignorable="d"
-        Title="EntitetiWindow" Height="300" Width="300">
+        Title="EntitetiWindow" Height="350" Width="350">
     <Grid>
-        <Label Grid.Row="0" Grid.Column="0" Content="Rad sa entitetima:" HorizontalAlignment="Left" Width="292" Margin="0,0,0,241"></Label>
+        <Label Grid.Row="0" Grid.Column="0" Content="Rad sa entitetima:" HorizontalAlignment="Left" Width="332" Margin="0,0,0,211"></Label>
 
-        <Button Content="Namestaj" FontSize="10" Margin="0,29,222,201" RenderTransformOrigin="0.494,0.245" Width="70" Height="40"/>
-        <Button Content="Tip namestaja" FontSize="10" Margin="75,29,147,201" RenderTransformOrigin="0.494,0.245" Width="70" Height="40"/>
-        <Button Content="Prodaja namestaja" FontSize="10" Margin="150,29,47,201" RenderTransformOrigin="0.494,0.245" Height="40"/>
-        <Button Content="Dodatna usluga" FontSize="10" Margin="0,74,210,156" RenderTransformOrigin="0.494,0.245" Height="40" Width="80"/>
-        <Button Content="Akcije" FontSize="10" Margin="86,74,126,156" RenderTransformOrigin="0.494,0.245" Height="40" Width="80"/>
-        <Button Content="Korisnici" FontSize="10" Margin="171,74,41,156" RenderTransformOrigin="0.494,0.245" Height="40" Width="80"/>
+        <Button Content="Namestaj" FontSize="10" Margin="10,59,252,199" RenderTransformOrigin="0.494,0.245" Click="NamestajWindow_Click"/>
+        <Button Content="Tip namestaja" FontSize="10" Margin="101,59,151,199" RenderTransformOrigin="0.494,0.245" Click="TipNamestaja_Click"/>
+        <Button Content="Prodaja namestaja" FontSize="10" Margin="196,59,10,199" RenderTransformOrigin="0.494,0.245" Click="ProdajaNamestaja_Click"/>
+        <Button Content="Dodatna usluga" FontSize="10" Margin="10,162,239,109" RenderTransformOrigin="0.494,0.245" Click="DodatanaUsluga_Click"/>
+        <Button Content="Akcije" FontSize="10" Margin="117,162,133,109" RenderTransformOrigin="0.494,0.245" Click="Akcija_Click"/>
+        <Button Content="Korisnici" FontSize="10" Margin="228,162,20,109" RenderTransformOrigin="0.494,0.245" Click="Koirsnik_Click"/>
     </Grid>
 </Window>
