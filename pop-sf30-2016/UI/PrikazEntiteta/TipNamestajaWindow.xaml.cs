@@ -4,6 +4,7 @@ using SF_30_2016.Modeli;
 using SF_30_2016.Util;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,12 +24,24 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
     /// </summary>
     public partial class TipNamestajaWindow : Window
     {
+
+        ICollectionView view;
+
         public TipNamestajaWindow()
         {
             InitializeComponent();
 
-            dgTipNamestaja.ItemsSource = Projekat.Instace.tipnamestaja;
+            view = CollectionViewSource.GetDefaultView(Projekat.Instace.tipnamestaja);
+            view.Filter = Filter;
+            dgTipNamestaja.ItemsSource = view;
             dgTipNamestaja.IsSynchronizedWithCurrentItem = true;
+
+            dgTipNamestaja.ColumnWidth = new DataGridLength(1, DataGridLengthUnitType.Star);
+        }
+
+        private bool Filter(object obj)
+        {
+            return !((TipNamestaja)obj).Obrisan;
         }
 
         private void Dodaj_Click(object sender, RoutedEventArgs e)
@@ -62,6 +75,7 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
                     if (n.Id == izabrani.Id)
                     {
                         n.Obrisan = true;
+                        view.Refresh();
                         break;
                     }
                 }
@@ -74,6 +88,18 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
         private void Izlaz_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void dgTipNamestaja_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if ((string)e.Column.Header == "Obrisan")
+            {
+                e.Cancel = true;
+            }
+            if ((string)e.Column.Header == "Id")
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

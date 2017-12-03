@@ -11,7 +11,7 @@
   <Namestaj>
     <Sifra>R1</Sifra>
     <JedinicnaCena>18</JedinicnaCena>
-    <Obrisan>false</Obrisan>
+    <Obrisan>true</Obrisan>
     <TipNamestajaId>2</TipNamestajaId>
     <Naziv>Regal</Naziv>
     <Id>2</Id>
@@ -20,7 +20,7 @@
     <Sifra>S1</Sifra>
     <JedinicnaCena>38</JedinicnaCena>
     <Obrisan>true</Obrisan>
-    <TipNamestajaId>1</TipNamestajaId>
+    <TipNamestajaId>3</TipNamestajaId>
     <Naziv>Sto</Naziv>
     <Id>3</Id>
   </Namestaj>

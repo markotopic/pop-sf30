@@ -3,6 +3,7 @@ using SF_30_2016.Modeli;
 using SF_30_2016.Util;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,12 +23,25 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
     /// </summary>
     public partial class AkcijaWindow : Window
     {
+
+        ICollectionView view;
+
         public AkcijaWindow()
         {
             InitializeComponent();
 
-            dgAkcija.ItemsSource = Projekat.Instace.Akcija;
+            view = CollectionViewSource.GetDefaultView(Projekat.Instace.Akcija);
+            view.Filter = AkcijaFilter;
+            dgAkcija.ItemsSource = view;
             dgAkcija.IsSynchronizedWithCurrentItem = true;
+
+            dgAkcija.ColumnWidth = new DataGridLength(1, DataGridLengthUnitType.Star);
+
+        }
+
+        private bool AkcijaFilter(object obj)
+        {
+            return !((Akcija)obj).Obrisan;
         }
 
         private void Dodaj_Click(object sender, RoutedEventArgs e)
@@ -61,6 +75,7 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
                     if (n.Id == izabrani.Id)
                     {
                         n.Obrisan = true;
+                        view.Refresh();
                         break;
                     }
                 }
@@ -75,5 +90,16 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
             this.Close();
         }
 
+        private void dgAkcija_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if ((string)e.Column.Header == "Obrisan")
+            {
+                e.Cancel = true;
+            }
+            if ((string)e.Column.Header == "Id")
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

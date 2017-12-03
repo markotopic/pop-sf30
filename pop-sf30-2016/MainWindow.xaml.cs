@@ -4,6 +4,7 @@ using SF_30_2016.Modeli;
 using SF_30_2016.Util;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,16 +25,25 @@ namespace pop_sf30_2016
     /// </summary>
     public partial class MainWindow : Window
     {
+        ICollectionView view;
+
         public MainWindow()
         {
             
             InitializeComponent();
 
-            dgNamestaj.ItemsSource = Projekat.Instace.Namestaj;
+            view = CollectionViewSource.GetDefaultView(Projekat.Instace.Namestaj);
+            view.Filter = NamestajFilter;
+            dgNamestaj.ItemsSource = view;
             dgNamestaj.IsSynchronizedWithCurrentItem = true;
-            
-        
 
+            dgNamestaj.ColumnWidth = new DataGridLength(1, DataGridLengthUnitType.Star);
+
+        }
+
+        private bool NamestajFilter(object obj)
+        {
+            return !((Namestaj)obj).Obrisan;
         }
 
         private void Izlaz_Click(object sender, RoutedEventArgs e)
@@ -62,7 +72,6 @@ namespace pop_sf30_2016
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var izabraniNamestaj = (Namestaj)dgNamestaj.SelectedItem;
-            
 
             if (MessageBox.Show($"Da li ste sigurni da zelite da obrisete: { izabraniNamestaj.Naziv}?", "Brisanje", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
@@ -72,6 +81,7 @@ namespace pop_sf30_2016
                     if (n.Id == izabraniNamestaj.Id)
                     {
                         n.Obrisan = true;
+                        view.Refresh();
                         break;
                     }
                 }
@@ -80,5 +90,23 @@ namespace pop_sf30_2016
 
             }
         }
+
+        private void dgNamestaj_AutoGeneratingColumn(object sender,
+            DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if ((string)e.Column.Header == "Obrisan")
+            {
+                e.Cancel = true;
+            }
+            if ((string)e.Column.Header == "TipNamestajaId")
+            {
+                e.Cancel = true;
+            }
+            if ((string)e.Column.Header == "Id")
+            {
+                e.Cancel = true;
+            }
+        }
+
     }
 }

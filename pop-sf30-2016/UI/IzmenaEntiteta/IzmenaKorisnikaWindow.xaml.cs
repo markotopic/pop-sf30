@@ -30,6 +30,7 @@ namespace pop_sf30_2016.UI.IzmenaEntiteta
 
         private Korisnik korisnik;
         private Operacija operacija;
+
         public IzmenaKorisnikaWindow(Korisnik korisnik, Operacija operacija)
         {
             InitializeComponent();
@@ -37,12 +38,13 @@ namespace pop_sf30_2016.UI.IzmenaEntiteta
             this.korisnik = korisnik;
             this.operacija = operacija;
 
-            cbTipKorisnika.ItemsSource = Projekat.Instace.TipKorisnika;
+            cbTipKorisnika.ItemsSource = Enum.GetValues(typeof(TipKorisnika)).Cast<TipKorisnika>();
 
             tbIme.DataContext = korisnik;
             tbPrezime.DataContext = korisnik;
             tbKorisnickoIme.DataContext = korisnik;
             tbSifra.DataContext = korisnik;
+
             cbTipKorisnika.DataContext = korisnik;
         }
 

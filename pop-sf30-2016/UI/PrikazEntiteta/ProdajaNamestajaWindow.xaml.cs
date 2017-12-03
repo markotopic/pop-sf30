@@ -36,13 +36,21 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
             dgProdajaNamestaja.IsSynchronizedWithCurrentItem = true;
 
             dgProdajaNamestaja.ColumnWidth = new DataGridLength(1, DataGridLengthUnitType.Star);
-
+                
         }
 
         private void dgProdajaNamestaja_AutoGeneratingColumn(object sender,
             DataGridAutoGeneratingColumnEventArgs e)
         {
             if ((string)e.Column.Header == "Id")
+            {
+                e.Cancel = true;
+            }
+            if ((string)e.Column.Header == "DodatneUsluge")
+            {
+                e.Cancel = true;
+            }
+            if ((string)e.Column.Header == "NamestajZaProdaju")
             {
                 e.Cancel = true;
             }
