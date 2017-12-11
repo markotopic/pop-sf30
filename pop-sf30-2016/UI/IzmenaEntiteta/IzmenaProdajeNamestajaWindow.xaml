@@ -6,10 +6,25 @@
         xmlns:local="clr-namespace:pop_sf30_2016.UI.IzmenaEntiteta"
         mc:Ignorable="d"
         Title="IzmenaProdajeNamestajaWindow" Height="600" Width="700">
-    <Grid>
+    <Grid Background="#FF666565">
 
-        <DataGrid AutoGenerateColumns="True" Height="209" HorizontalAlignment="Left" Margin="0,361,0,0" Name="dgDodatnaUsluga" VerticalAlignment="Top" Width="316" IsReadOnly="True" />
-        <TextBlock FontSize="20" Height="29" HorizontalAlignment="Left" Name="tbDodatnaUsluga" Text="Dodatne usluge" VerticalAlignment="Top" Width="159" Margin="0,327,0,0" RenderTransformOrigin="0.478,-0.724" />
+        <DataGrid AutoGenerateColumns="True" Height="209" HorizontalAlignment="Left" Margin="366,361,0,0" Name="dgDodatnaUsluga" VerticalAlignment="Top" Width="316" IsReadOnly="True" />
+        <TextBlock FontSize="20" Height="29" HorizontalAlignment="Left" Name="tbDodatnaUsluga" Text="Dodatne usluge" VerticalAlignment="Top" Width="159" Margin="366,327,0,0" RenderTransformOrigin="0.478,-0.724" />
+
+        <Label Content="Kupac" Width="130" Height="40" Margin="20,25,541,505" FontSize="20" />
+        <TextBox FontSize="15" Name="tbKupac" Height="40" Text="{Binding Path=Kupac}" Margin="190,25,372,505" Width="130" RenderTransformOrigin="0.488,0.55"/>
+
+        <Label Content="Ukupna cena" Width="130" Height="40" Margin="20,79,542,451" FontSize="20" />
+        <TextBox FontSize="15" x:Name="tbUkupnaCena" Height="40" Text="{Binding Path=UkupnaCena}" Margin="190,79,372,451" Width="130" RenderTransformOrigin="0.488,0.55"/>
+
+        <Label Content="Broj racuna" Width="130" Height="40" Margin="20,134,542,396" FontSize="20" />
+        <TextBox FontSize="15" x:Name="tbBrojRacuna" Height="40" Text="{Binding Path=BrojRacuna}" Margin="190,134,372,396" Width="130" RenderTransformOrigin="0.488,0.55"/>
+
+        <Label Content="Broj komada" Width="130" Height="40" Margin="20,189,542,341" FontSize="20" />
+        <TextBox FontSize="15" x:Name="tbBrojKomada" Height="40" Text="{Binding Path=BrojKomada}" Margin="190,189,372,341" Width="130" RenderTransformOrigin="0.488,0.55"/>
+
+        <Label Content="Datum prodaje" Width="130" Height="40" Margin="20,244,542,286" FontSize="18"/>
+        <TextBox FontSize="15" x:Name="tbDatumProdaje" Height="40" Text="{Binding Path=DatumProdaje}" Margin="190,244,372,286" Width="130" RenderTransformOrigin="0.488,0.55"/>
 
     </Grid>
 </Window>

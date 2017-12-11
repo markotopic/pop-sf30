@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SF_30_2016.Modeli;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -15,6 +16,18 @@ namespace SF_30_2016.Model
         private double cenaUsluge;
         private string naziv;
         private bool obrisan;
+
+        public static DodatnaUsluga GetById(int id)
+        {
+            foreach (var a in Projekat.Instace.DodatnaUsluga)
+            {
+                if (a.Id == id)
+                {
+                    return a;
+                }
+            }
+            return null;
+        }
 
         public bool Obrisan
         {

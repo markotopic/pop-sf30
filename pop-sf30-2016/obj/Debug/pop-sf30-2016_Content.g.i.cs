@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/tipkorisnika.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("db_scripts/cerbas.sql")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("db_scripts/seed.sql")]
 
 

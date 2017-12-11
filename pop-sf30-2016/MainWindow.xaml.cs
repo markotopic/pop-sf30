@@ -31,7 +31,7 @@ namespace pop_sf30_2016
         {
             
             InitializeComponent();
-
+           
             view = CollectionViewSource.GetDefaultView(Projekat.Instace.Namestaj);
             view.Filter = NamestajFilter;
             dgNamestaj.ItemsSource = view;

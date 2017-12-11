@@ -22,8 +22,12 @@ namespace SF_30_2016.Modeli
 
         private Projekat()
         {
-            tipnamestaja = new ObservableCollection<TipNamestaja>(GenericSerializer.DeSerialize<TipNamestaja>("tipNamestaja.xml"));
-            Namestaj = new ObservableCollection<Namestaj>(GenericSerializer.DeSerialize<Namestaj>("namestaj.xml"));
+            //tipnamestaja = new ObservableCollection<TipNamestaja>(GenericSerializer.DeSerialize<TipNamestaja>("tipNamestaja.xml"));
+            //Namestaj = new ObservableCollection<Namestaj>(GenericSerializer.DeSerialize<Namestaj>("namestaj.xml"));
+
+            tipnamestaja = TipNamestaja.GetAll();
+            Namestaj = Namestaj.GetAll();
+
             Korisnik = new ObservableCollection<Korisnik>(GenericSerializer.DeSerialize<Korisnik>("korisnici.xml"));
             DodatnaUsluga = new ObservableCollection<DodatnaUsluga>(GenericSerializer.DeSerialize<DodatnaUsluga>("dodatneUsluge.xml"));
             Akcija = new ObservableCollection<Akcija>(GenericSerializer.DeSerialize<Akcija>("akcije.xml"));

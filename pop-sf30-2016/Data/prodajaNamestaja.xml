@@ -5,12 +5,8 @@
     <BrojKomada>2</BrojKomada>
     <DatumProdaje>0001-01-01T00:00:00</DatumProdaje>
     <BrojRacuna>111-222-333</BrojRacuna>
-    <DodatneUsluge>
-      <Id>1</Id>
-      <Naziv>Dostava</Naziv>
-      <CenaUsluge>2000</CenaUsluge>
-      <Obrisan>false</Obrisan>
-    </DodatneUsluge>
+    <DodatnaUslugaId>1</DodatnaUslugaId>
     <UkupnaCena>22000</UkupnaCena>
+    <Kupac>Marko</Kupac>
   </ProdajaNamestaja>
 </ArrayOfProdajaNamestaja>

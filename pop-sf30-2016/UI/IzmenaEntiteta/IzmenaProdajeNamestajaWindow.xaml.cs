@@ -42,6 +42,11 @@ namespace pop_sf30_2016.UI.IzmenaEntiteta
             dgDodatnaUsluga.ItemsSource = prodajaNamestaja.DodatneUsluge;
             dgDodatnaUsluga.ColumnWidth = new DataGridLength(1, DataGridLengthUnitType.Star);
 
+            tbKupac.DataContext = prodajaNamestaja;
+            tbUkupnaCena.DataContext = prodajaNamestaja;
+            tbBrojRacuna.DataContext = prodajaNamestaja;
+            tbBrojKomada.DataContext = prodajaNamestaja;
+            tbDatumProdaje.DataContext = prodajaNamestaja;
 
         }
     }

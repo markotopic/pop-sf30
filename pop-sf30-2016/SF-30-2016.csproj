@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -206,13 +207,20 @@
   <ItemGroup>
     <Resource Include="Data\akcije.xml" />
     <Resource Include="Data\dodatneUsluge.xml" />
-    <Resource Include="Data\prodajaNamestaja.xml" />
+    <Resource Include="Data\prodajaNamestaja.xml">
+      <SubType>Designer</SubType>
+    </Resource>
     <Resource Include="Data\tipNamestaja.xml">
       <SubType>Designer</SubType>
     </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Data\tipKorisnika.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Db_scripts\cerbas.sql" />
+    <Content Include="Db_scripts\seed.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
