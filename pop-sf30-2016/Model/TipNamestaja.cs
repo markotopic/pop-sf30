@@ -1,6 +1,7 @@
 ﻿using SF_30_2016.Modeli;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
@@ -71,23 +72,54 @@ namespace SF_30_2016.Model
         }
 
         #region CRUD
+
+        public static ObservableCollection<TipNamestaja> GetAll()
+        {
+            var tipoviNamestaja = new ObservableCollection<TipNamestaja>();
+
+            using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["POP"].ConnectionString))
+            {
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = "SELECT * FROM TipNamestaja WHERE Obrisan=0";
+
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter();
+
+                da.SelectCommand = cmd;
+                da.Fill(ds, "TipNamestaja");    // izvrsava se query nad bazom
+
+                foreach (DataRow row in ds.Tables["TipNamestaja"].Rows)
+                {
+                    var tn = new TipNamestaja();
+                    tn.Id = int.Parse(row["Id"].ToString());
+                    tn.Naziv = row["Naziv"].ToString();
+                    tn.Obrisan = bool.Parse(row["Obrisan"].ToString());
+
+                    tipoviNamestaja.Add(tn);
+                }
+            }
+            return tipoviNamestaja;
+        }
+
         public static TipNamestaja Create(TipNamestaja tn)
         {
             using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["POP"].ConnectionString))
             {
+                con.Open();
 
                 SqlCommand cmd = con.CreateCommand();
-                DataSet ds = new DataSet();
+                cmd.CommandText = $"INSERT INTO TipNamestaja (Naziv, Obrisan) VALUES (@Naziv, @Obrisan);";
+                cmd.CommandText += "SELECT SCOPE_IDENTITY();";
 
-                cmd.CommandText = "INSERT INTO TipNamestaja (Naziv, Obrisan) VALUES (@Naziv, @Obrisan);";
-                cmd.CommandText += "SELECT SCOPE_IDENTITY";
                 cmd.Parameters.AddWithValue("Naziv", tn.Naziv);
                 cmd.Parameters.AddWithValue("Obrisan", tn.Obrisan);
 
-                tn.Id = int.Parse(cmd.ExecuteScalar().ToString()); //executeScalar izvrsava upit
-
+                int newId = int.Parse(cmd.ExecuteScalar().ToString());  // ExecuteScalar izvrsava query
+                tn.Id = newId;
             }
-            Projekat.Instace.tipnamestaja.Add(tn);
+
+            Projekat.Instace.tipnamestaja.Add(tn); // azuriram i STANJE MODELA!
+
             return tn;
         }
 
@@ -101,7 +133,6 @@ namespace SF_30_2016.Model
 
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandText = "UPDATE TipNamestaja SET Naziv=@Naziv, Obrisan=@Obrisan WHERE Id=@Id";
-                cmd.CommandText += "SELECT SCOPE_IDENTITY";
 
                 cmd.Parameters.AddWithValue("Id", tn.Id);
                 cmd.Parameters.AddWithValue("Naziv", tn.Naziv);
@@ -118,6 +149,7 @@ namespace SF_30_2016.Model
                 {
                     tipNamestaja.Naziv = tn.Naziv;
                     tipNamestaja.Obrisan = tn.Obrisan;
+                    break;
                 }
             }
 

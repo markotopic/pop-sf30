@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\AktivanKorisnik.cs" />
     <Compile Include="Model\Projekat.cs" />
     <Compile Include="UI\EntitetiWindow.xaml.cs">
       <DependentUpon>EntitetiWindow.xaml</DependentUpon>
@@ -192,7 +193,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Data\namestaj.xml">

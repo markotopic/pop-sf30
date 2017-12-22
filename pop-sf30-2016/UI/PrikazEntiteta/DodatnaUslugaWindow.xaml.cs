@@ -31,7 +31,7 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
         {
             InitializeComponent();
 
-            view = CollectionViewSource.GetDefaultView(Projekat.Instace.DodatnaUsluga);
+            view = CollectionViewSource.GetDefaultView(Projekat.Instace.dodatnausluga);
             view.Filter = Filter;
             dgDodatnaUsluga.ItemsSource = view;
             dgDodatnaUsluga.IsSynchronizedWithCurrentItem = true;
@@ -65,23 +65,11 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
         private void Obrisi_Click(object sender, RoutedEventArgs e)
         {
             var izabrani = (DodatnaUsluga)dgDodatnaUsluga.SelectedItem;
-
-
+            
             if (MessageBox.Show($"Da li ste sigurni da zelite da obrisete: { izabrani.Naziv}?", "Brisanje", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-
-                foreach (var n in Projekat.Instace.DodatnaUsluga)
-                {
-                    if (n.Id == izabrani.Id)
-                    {
-                        n.Obrisan = true;
-                        view.Refresh();
-                        break;
-                    }
-                }
-
-                GenericSerializer.Serialize("dodatneUsluge.xml", Projekat.Instace.DodatnaUsluga);
-
+                DodatnaUsluga.Delete(izabrani);
+                view.Refresh();
             }
         }
 

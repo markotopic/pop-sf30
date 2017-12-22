@@ -13,26 +13,22 @@ namespace SF_30_2016.Modeli
         public static Projekat Instace { get; private set; } = new Projekat();
 
         public ObservableCollection<TipNamestaja> tipnamestaja;
-        public ObservableCollection<Namestaj> Namestaj;
-        public ObservableCollection<Korisnik> Korisnik;
-        public ObservableCollection<DodatnaUsluga> DodatnaUsluga;
+        public ObservableCollection<Namestaj> namestaj;
+        public ObservableCollection<DodatnaUsluga> dodatnausluga;
+        public ObservableCollection<Korisnik> korisnik;
+
         public ObservableCollection<Akcija> Akcija;
-        public ObservableCollection<Korisnik> TipKorisnika;
         public ObservableCollection<ProdajaNamestaja> ProdajaNamestaja;
 
         private Projekat()
         {
-            //tipnamestaja = new ObservableCollection<TipNamestaja>(GenericSerializer.DeSerialize<TipNamestaja>("tipNamestaja.xml"));
-            //Namestaj = new ObservableCollection<Namestaj>(GenericSerializer.DeSerialize<Namestaj>("namestaj.xml"));
-
             tipnamestaja = TipNamestaja.GetAll();
-            Namestaj = Namestaj.GetAll();
-
-            Korisnik = new ObservableCollection<Korisnik>(GenericSerializer.DeSerialize<Korisnik>("korisnici.xml"));
-            DodatnaUsluga = new ObservableCollection<DodatnaUsluga>(GenericSerializer.DeSerialize<DodatnaUsluga>("dodatneUsluge.xml"));
+            namestaj = Namestaj.GetAll();
+            dodatnausluga = DodatnaUsluga.GetAll();
+            korisnik = Korisnik.GetAll();
+            
             Akcija = new ObservableCollection<Akcija>(GenericSerializer.DeSerialize<Akcija>("akcije.xml"));
             ProdajaNamestaja = new ObservableCollection<ProdajaNamestaja>(GenericSerializer.DeSerialize<ProdajaNamestaja>("prodajaNamestaja.xml"));
-            TipKorisnika = new ObservableCollection<Korisnik>(GenericSerializer.DeSerialize<Korisnik>("tipKorisnika.xml"));
         }
 
 

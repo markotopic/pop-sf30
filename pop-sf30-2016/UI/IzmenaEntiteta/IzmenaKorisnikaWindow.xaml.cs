@@ -51,34 +51,22 @@ namespace pop_sf30_2016.UI.IzmenaEntiteta
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            var lista = Projekat.Instace.Korisnik;
+            var lista = Projekat.Instace.korisnik;
 
             switch (operacija)
             {
                 case Operacija.DODAVANJE:
-                    korisnik.Id = lista.Count + 1;
-                    lista.Add(korisnik);
+                    Korisnik.Create(korisnik);
                     this.Close();
                     break;
                 case Operacija.IZMENA:
-                    foreach (var n in lista)
-                    {
-                        if (n.Id == korisnik.Id)
-                        {
-                            n.Ime = korisnik.Ime;
-                            n.Prezime = korisnik.Prezime;
-                            n.KorisnickoIme = korisnik.KorisnickoIme;
-                            n.Sifra = korisnik.Sifra;
-                            n.TipKorisnika = korisnik.TipKorisnika;
-                            this.Close();
-                            break;
-                        }
-                    }
+                    Korisnik.Update(korisnik);
+                    this.Close();
                     break;
                 default:
                     break;
             }
-            GenericSerializer.Serialize("korisnici.xml", lista);
+
         }
 
         private void Izlaz_Click(object sender, RoutedEventArgs e)

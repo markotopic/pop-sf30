@@ -66,22 +66,10 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
         {
             var izabrani = (TipNamestaja)dgTipNamestaja.SelectedItem;
 
-
             if (MessageBox.Show($"Da li ste sigurni da zelite da obrisete: { izabrani.Naziv}?", "Brisanje", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-
-                foreach (var n in Projekat.Instace.tipnamestaja)
-                {
-                    if (n.Id == izabrani.Id)
-                    {
-                        n.Obrisan = true;
-                        view.Refresh();
-                        break;
-                    }
-                }
-
-                GenericSerializer.Serialize("tipNamestaja.xml", Projekat.Instace.tipnamestaja);
-
+                TipNamestaja.Delete(izabrani);
+                view.Refresh();
             }
         }
 

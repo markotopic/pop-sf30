@@ -31,7 +31,7 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
         {
             InitializeComponent();
 
-            view = CollectionViewSource.GetDefaultView(Projekat.Instace.Korisnik);
+            view = CollectionViewSource.GetDefaultView(Projekat.Instace.korisnik);
             view.Filter = Filter;
             dgKorisnik.ItemsSource = view;
             dgKorisnik.IsSynchronizedWithCurrentItem = true;
@@ -69,19 +69,8 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
 
             if (MessageBox.Show($"Da li ste sigurni da zelite da obrisete: { izabrani.Ime}?", "Brisanje", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-
-                foreach (var n in Projekat.Instace.Korisnik)
-                {
-                    if (n.Id == izabrani.Id)
-                    {
-                        n.Obrisan = true;
-                        view.Refresh();
-                        break;
-                    }
-                }
-
-                GenericSerializer.Serialize("korisnici.xml", Projekat.Instace.Korisnik);
-
+                Korisnik.Delete(izabrani);
+                view.Refresh();
             }
         }
 

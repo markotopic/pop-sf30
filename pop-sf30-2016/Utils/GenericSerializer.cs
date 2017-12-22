@@ -39,9 +39,8 @@ namespace SF_30_2016.Util
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
                 throw;
             }
         }

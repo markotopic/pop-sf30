@@ -49,33 +49,22 @@ namespace pop_sf30_2016.UI
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             
-            var listaNamestaja = Projekat.Instace.Namestaj;
+            var listaNamestaja = Projekat.Instace.namestaj;
 
             switch (operacija)
             {
                 case Operacija.DODAVANJE:
-                    namestaj.Id = listaNamestaja.Count + 1;
-                    listaNamestaja.Add(namestaj);
+                    Namestaj.Create(namestaj);
                     this.Close();
                     break;
                 case Operacija.IZMENA:
-                    foreach (var n in listaNamestaja)
-                    {
-                        if (n.Id == namestaj.Id)
-                        {
-                            n.TipNamestajaId = namestaj.TipNamestajaId;
-                            n.Naziv = namestaj.Naziv;
-                            n.JedinicnaCena = namestaj.JedinicnaCena;
-                            n.Sifra = namestaj.Sifra;
-                            this.Close();
-                            break;
-                        }
-                    }
+                    Namestaj.Update(namestaj);
+                    this.Close();
                     break;
                 default:
                     break;
             }
-            GenericSerializer.Serialize("namestaj.xml", listaNamestaja);
+            
         }
 
         private void Izlaz_Click(object sender, RoutedEventArgs e)

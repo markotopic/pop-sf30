@@ -49,25 +49,17 @@ namespace pop_sf30_2016.UI.IzmenaEntiteta
             switch (operacija)
             {
                 case Operacija.DODAVANJE:
-                    tipNamestaja.Id = listaNamestaja.Count + 1;
-                    listaNamestaja.Add(tipNamestaja);
+                    TipNamestaja.Create(tipNamestaja);
                     this.Close();
                     break;
                 case Operacija.IZMENA:
-                    foreach (var n in listaNamestaja)
-                    {
-                        if (n.Id == tipNamestaja.Id)
-                        {
-                            n.Naziv = tipNamestaja.Naziv;
-                            this.Close();
-                            break;
-                        }
-                    }
+                    TipNamestaja.Update(tipNamestaja);
+                    this.Close();
                     break;
                 default:
                     break;
             }
-            GenericSerializer.Serialize("tipNamestaja.xml", listaNamestaja);
+
         }
 
         private void Izlaz_Click(object sender, RoutedEventArgs e)

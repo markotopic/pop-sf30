@@ -32,7 +32,7 @@ namespace pop_sf30_2016
             
             InitializeComponent();
            
-            view = CollectionViewSource.GetDefaultView(Projekat.Instace.Namestaj);
+            view = CollectionViewSource.GetDefaultView(Projekat.Instace.namestaj);
             view.Filter = NamestajFilter;
             dgNamestaj.ItemsSource = view;
             dgNamestaj.IsSynchronizedWithCurrentItem = true;
@@ -75,19 +75,8 @@ namespace pop_sf30_2016
 
             if (MessageBox.Show($"Da li ste sigurni da zelite da obrisete: { izabraniNamestaj.Naziv}?", "Brisanje", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-
-                foreach (var n in Projekat.Instace.Namestaj)
-                {
-                    if (n.Id == izabraniNamestaj.Id)
-                    {
-                        n.Obrisan = true;
-                        view.Refresh();
-                        break;
-                    }
-                }
-
-                GenericSerializer.Serialize("namestaj.xml", Projekat.Instace.Namestaj);
-
+                Namestaj.Delete(izabraniNamestaj);
+                view.Refresh();
             }
         }
 
