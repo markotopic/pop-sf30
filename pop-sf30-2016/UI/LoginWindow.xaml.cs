@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static SF_30_2016.Model.Korisnik;
 
 namespace pop_sf30_2016.UI
 {
@@ -32,20 +33,37 @@ namespace pop_sf30_2016.UI
 
             foreach (var i in Projekat.Instace.korisnik)
             {
-                if (i.KorisnickoIme == tbUsername.Text && i.Sifra == tbPassword.Text)
+
+                if (i.KorisnickoIme == tbUsername.Text && i.Sifra == tbPassword.Password && i.Obrisan == false)
                 {
-                    var main = new MainWindow();
-                    main.ShowDialog();
-                    break;
+                    if (i.TipKorisnikaa == TipKorisnika.Prodavac)
+                    {
+                        Projekat.Instace.Aktivan = false;
+                        var main = new EntitetiWindow();
+                        main.ShowDialog();
+                        break;
+                    }
+                    else if (i.TipKorisnikaa == TipKorisnika.Administrator)
+                    {
+                        Projekat.Instace.Aktivan = true;
+                        var mainn = new EntitetiWindow();
+                        mainn.ShowDialog();
+                        break;
+                    }
                 }
-                else
+                else if (tbUsername.Text == "" || tbPassword.Password == "")
                 {
-                    break;
+                    MessageBox.Show("Morate popuniti sva polja");
                 }
+                
+
             }
 
         }
 
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

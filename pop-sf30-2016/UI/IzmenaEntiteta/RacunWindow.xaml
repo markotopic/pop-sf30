@@ -1,0 +1,32 @@
+﻿<Window x:Class="pop_sf30_2016.UI.IzmenaEntiteta.RacunWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pop_sf30_2016.UI.IzmenaEntiteta"
+        mc:Ignorable="d"
+        Title="RacunWindow" Height="500" Width="600">
+    <Grid>
+        <TextBlock Name="lblKupac" Text="Kupac" Height="23" Width="60" FontSize="19" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,21,0,0"  />
+        <TextBox Name="tbKupac" Text="{Binding Path=Kupac}" Height="32" Width="450" FontSize="19" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,21,0,0" />
+
+        <TextBlock Name="lblBrojRacuna" Text="Br. Racuna" Height="23" Width="82" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,70,0,0"  />
+        <TextBox Name="tbBrojRacuna" Text="{Binding Path=BrojRacuna}" Height="32" Width="450" FontSize="19" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,70,0,0" />
+
+        <TextBlock Name="lblNamestaj" Text="Namestaj:" Height="36" Width="92" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,112,0,0"  />
+        <Button Name="btnDodajNamestaj" Content="Dodaj" FontSize="15" Margin="10,333,488,105" Click="btnDodajNamestaj_Click" />
+        <Button Name="btnObrisiNamestaj" Content="Obrisi" FontSize="15" Margin="104,333,394,105" />
+        <DataGrid Name="dgNamestaj" AutoGenerateColumns="True" Margin="10,148,330,136" IsReadOnly="True" FontSize="16" />
+        <!--AutoGeneratingColumn="dgNamestaj_AutoGeneratingColumn"-->
+
+        <TextBlock Name="lblDodatneUsluge" Text="Dodatne usluge:" Height="31" Width="148" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="308,112,0,0"  />
+        <Button Name="btnDodatneUsluge" Content="Dodaj" FontSize="15" Margin="308,333,190,105" />
+        <Button Name="btnObrisiDodatneUsluge" Content="Obrisi" FontSize="15" Margin="402,333,96,105" />
+        <DataGrid Name="dgDodatneUsluge" AutoGenerateColumns="True" Margin="308,148,32,136" IsReadOnly="True" FontSize="16" />
+        <!--/> AutoGeneratingColumn="dgDodatneUsluge_AutoGeneratingColumn" />-->
+
+        <TextBlock Name="lblCena" Text="Ukupna cena:" Height="27" Width="129" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,380,0,0"  />
+        <Button Name="btnOk" Content="OK" FontSize="20" Margin="389,428,109,10" />
+        <Button Name="btnCancel" Content="Cancel" FontSize="20" Margin="488,428,10,10" />
+    </Grid>
+</Window>

@@ -16,6 +16,9 @@
         <Button Grid.Row="1" Content="Dodaj" FontSize="10" Margin="25,35,613,37" Click="Dodaj_Click"/>
         <Button Grid.Row="1" Content="Izmeni" FontSize="10" Margin="105,35,527,37" Click="Izmeni_Click"/>
         <Button Grid.Row="1" Content="Obrisi" FontSize="10" Margin="181,35,454,37" RenderTransformOrigin="1.537,0.396" Click="Obrisi_Click"/>
-        <Button x:Name="Izlaz" Grid.Row="1" Content="Izlaz" FontSize="10" Margin="254,35,374,37" Click="Izlaz_Click"/>
+        <ComboBox x:Name="cbSortiraj" HorizontalAlignment="Left" Height="25" Margin="275,37,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="cbSortiraj_SelectionChanged" Grid.Row="1"/>
+        <Label Content="Sortiranje po:" HorizontalAlignment="Left" Height="27" Margin="275,10,0,0" VerticalAlignment="Top" Width="86" Grid.Row="1"/>
+        
+        <Button x:Name="Izlaz" Grid.Row="1" Content="Izlaz" FontSize="10" Margin="618,35,10,37" Click="Izlaz_Click"/>
     </Grid>
 </Window>

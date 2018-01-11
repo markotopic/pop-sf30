@@ -55,8 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\AktivanKorisnik.cs" />
     <Compile Include="Model\Projekat.cs" />
+    <Compile Include="Model\StavkaNamestaja.cs" />
     <Compile Include="UI\EntitetiWindow.xaml.cs">
       <DependentUpon>EntitetiWindow.xaml</DependentUpon>
     </Compile>
@@ -72,8 +72,14 @@
     <Compile Include="UI\IzmenaEntiteta\IzmenaProdajeNamestajaWindow.xaml.cs">
       <DependentUpon>IzmenaProdajeNamestajaWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\IzmenaEntiteta\IzmenaSalonaWindow.xaml.cs">
+      <DependentUpon>IzmenaSalonaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\IzmenaEntiteta\IzmenaTipaNamestajaWindow.xaml.cs">
       <DependentUpon>IzmenaTipaNamestajaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IzmenaEntiteta\RacunWindow.xaml.cs">
+      <DependentUpon>RacunWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
@@ -92,6 +98,9 @@
     </Compile>
     <Compile Include="UI\PrikazEntiteta\ProdajaNamestajaWindow.xaml.cs">
       <DependentUpon>ProdajaNamestajaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PrikazEntiteta\SalonWindow.xaml.cs">
+      <DependentUpon>SalonWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\PrikazEntiteta\TipNamestajaWindow.xaml.cs">
       <DependentUpon>TipNamestajaWindow.xaml</DependentUpon>
@@ -129,7 +138,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\IzmenaEntiteta\IzmenaSalonaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\IzmenaEntiteta\IzmenaTipaNamestajaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\IzmenaEntiteta\RacunWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -154,6 +171,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\PrikazEntiteta\ProdajaNamestajaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\PrikazEntiteta\SalonWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

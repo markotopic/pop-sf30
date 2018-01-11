@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pop_sf30_2016.UI"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="300" Width="300">
+        Title="LoginWindow" Height="310" Width="300">
     <Grid>
-        <Label Content="Username" Margin="10,10,159,214"/>
+        <Label Content="Korisnicko ime:" Margin="10,30,159,213"/>
         <TextBox Name="tbUsername" Margin="10,56,142,188" />
-        <Label Content="Password" Margin="0,95,201,142"/>
-        <TextBox Name="tbPassword" Margin="10,133,142,110" />
+        <Label Content="Sifra:" Height="26" FontSize="15" Margin="10,106,232,137"/>
+        <PasswordBox Name="tbPassword" Margin="10,132,142,111" />
 
         <Button Content="Login" Margin="30,222,173,10" Click="LogIn"/>
-        <Button Content="Exit" Margin="169,222,24,10"/>
+        <Button Content="Exit" Margin="169,222,24,10" Click="Button_Click"/>
     </Grid>
 </Window>

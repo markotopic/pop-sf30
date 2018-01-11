@@ -1,4 +1,5 @@
 ﻿using pop_sf30_2016.UI.PrikazEntiteta;
+using SF_30_2016.Modeli;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,14 @@ namespace pop_sf30_2016.UI
         public EntitetiWindow()
         {
             InitializeComponent();
+
+            if (Projekat.Instace.Aktivan == false)
+            {
+                btnKorisnici.Visibility = Visibility.Hidden;
+                btnTip.Visibility = Visibility.Collapsed;
+                btnSalon.Visibility = Visibility.Collapsed;
+            }
+
         }
 
         private void NamestajWindow_Click(object sender, RoutedEventArgs e)
@@ -61,6 +70,17 @@ namespace pop_sf30_2016.UI
         {
             var a = new ProdajaNamestajaWindow();
             a.Show();
+        }
+
+        private void btnKorisnici_Click(object sender, RoutedEventArgs e)
+        {
+            var a = new SalonWindow();
+            a.Show();
+        }
+
+        private void btnKorisnici_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\App.xaml
-1490404264
+17-1882385476
 21202313509
-28-986449945
+31-360865831
 14-799888181
-MainWindow.xaml;UI\EntitetiWindow.xaml;UI\IzmenaEntiteta\IzmenaAkcijaWindow.xaml;UI\IzmenaEntiteta\IzmenaDodatneUslugeWindow.xaml;UI\IzmenaEntiteta\IzmenaKorisnikaWindow.xaml;UI\IzmenaEntiteta\IzmenaProdajeNamestajaWindow.xaml;UI\IzmenaEntiteta\IzmenaTipaNamestajaWindow.xaml;UI\LoginWindow.xaml;UI\NamestajWindow.xaml;UI\PrikazEntiteta\AkcijaWindow.xaml;UI\PrikazEntiteta\DodatnaUslugaWindow.xaml;UI\PrikazEntiteta\KorisnikWindow.xaml;UI\PrikazEntiteta\ProdajaNamestajaWindow.xaml;UI\PrikazEntiteta\TipNamestajaWindow.xaml;
+MainWindow.xaml;UI\EntitetiWindow.xaml;UI\IzmenaEntiteta\IzmenaAkcijaWindow.xaml;UI\IzmenaEntiteta\IzmenaDodatneUslugeWindow.xaml;UI\IzmenaEntiteta\IzmenaKorisnikaWindow.xaml;UI\IzmenaEntiteta\IzmenaProdajeNamestajaWindow.xaml;UI\IzmenaEntiteta\IzmenaSalonaWindow.xaml;UI\IzmenaEntiteta\IzmenaTipaNamestajaWindow.xaml;UI\IzmenaEntiteta\RacunWindow.xaml;UI\LoginWindow.xaml;UI\NamestajWindow.xaml;UI\PrikazEntiteta\AkcijaWindow.xaml;UI\PrikazEntiteta\DodatnaUslugaWindow.xaml;UI\PrikazEntiteta\KorisnikWindow.xaml;UI\PrikazEntiteta\ProdajaNamestajaWindow.xaml;UI\PrikazEntiteta\SalonWindow.xaml;UI\PrikazEntiteta\TipNamestajaWindow.xaml;
 
 False
 

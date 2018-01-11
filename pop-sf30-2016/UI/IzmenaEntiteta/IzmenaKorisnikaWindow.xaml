@@ -34,7 +34,7 @@
         <TextBox Grid.Row="3" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbSifra" Width="100" Text="{Binding Path=Sifra}"/>
 
         <Label Grid.Row="4" Grid.Column="0" Content="Tip" HorizontalAlignment="Left" Width="75"/>
-        <ComboBox Grid.Row="4" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="cbTipKorisnika" Width="100" SelectedItem="{Binding Path=TipKorisnika}"/>
+        <ComboBox Grid.Row="4" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="cbTipKorisnika" Width="100" SelectedItem="{Binding Path=TipKorisnikaa}"/>
 
         <Button Content="Sacuvaj" HorizontalAlignment="Right" Margin="0,126,22,0" Grid.Row="5" Width="46" Click="Button_Click"/>
         <Button Content="Izlaz" HorizontalAlignment="Right" RenderTransformOrigin="1.009,0.562" Grid.Column="1" Margin="0,126,41,0" Grid.Row="5" Width="53" Click="Izlaz_Click"/>

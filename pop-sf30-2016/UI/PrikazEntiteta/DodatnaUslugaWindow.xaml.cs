@@ -37,6 +37,17 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
             dgDodatnaUsluga.IsSynchronizedWithCurrentItem = true;
 
             dgDodatnaUsluga.ColumnWidth = new DataGridLength(1, DataGridLengthUnitType.Star);
+
+            if (Projekat.Instace.Aktivan == false)
+            {
+                btnDodaj.Visibility = Visibility.Hidden;
+                btnIzmeni.Visibility = Visibility.Hidden;
+                btnObrisi.Visibility = Visibility.Hidden;
+            }
+
+            cbSortiraj.Items.Add("Reset");
+            cbSortiraj.Items.Add("Ceni usluge");
+            cbSortiraj.Items.Add("Nazivu");
         }
 
         private bool Filter(object obj)
@@ -91,5 +102,22 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
             }
         }
 
+        private void cbSortiraj_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbSortiraj.SelectedIndex == 0)
+            {
+                dgDodatnaUsluga.Items.SortDescriptions.Clear();
+            }
+            else if (cbSortiraj.SelectedIndex == 1)
+            {
+                dgDodatnaUsluga.Items.SortDescriptions.Clear();
+                dgDodatnaUsluga.Items.SortDescriptions.Add(new SortDescription("CenaUsluge", ListSortDirection.Descending));
+            }
+            else if (cbSortiraj.SelectedIndex == 2)
+            {
+                dgDodatnaUsluga.Items.SortDescriptions.Clear();
+                dgDodatnaUsluga.Items.SortDescriptions.Add(new SortDescription("Naziv", ListSortDirection.Descending));
+            }
+        }
     }
 }

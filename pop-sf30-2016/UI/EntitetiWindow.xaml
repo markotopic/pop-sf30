@@ -10,10 +10,12 @@
         <Label Grid.Row="0" Grid.Column="0" Content="Rad sa entitetima:" HorizontalAlignment="Left" Width="332" Margin="0,0,0,211"></Label>
 
         <Button Content="Namestaj" FontSize="10" Margin="10,59,252,199" RenderTransformOrigin="0.494,0.245" Click="NamestajWindow_Click"/>
-        <Button Content="Tip namestaja" FontSize="10" Margin="101,59,151,199" RenderTransformOrigin="0.494,0.245" Click="TipNamestaja_Click"/>
+        <Button Name="btnTip" Content="Tip namestaja" FontSize="10" Margin="119,162,133,109" RenderTransformOrigin="0.494,0.245" Click="TipNamestaja_Click"/>
         <Button Content="Prodaja namestaja" FontSize="10" Margin="196,59,10,199" RenderTransformOrigin="0.494,0.245" Click="ProdajaNamestaja_Click"/>
         <Button Content="Dodatna usluga" FontSize="10" Margin="10,162,239,109" RenderTransformOrigin="0.494,0.245" Click="DodatanaUsluga_Click"/>
-        <Button Content="Akcije" FontSize="10" Margin="117,162,133,109" RenderTransformOrigin="0.494,0.245" Click="Akcija_Click"/>
-        <Button Content="Korisnici" FontSize="10" Margin="228,162,20,109" RenderTransformOrigin="0.494,0.245" Click="Koirsnik_Click"/>
+        <Button Content="Akcije" FontSize="10" Margin="95,59,155,199" RenderTransformOrigin="0.494,0.245" Click="Akcija_Click"/>
+        <Button Name="btnKorisnici" Content="Korisnici" FontSize="10" Margin="228,162,20,109" RenderTransformOrigin="0.494,0.245" Click="Koirsnik_Click"/>
+        <Button Name="btnSalon" Content="Salon" FontSize="10" Margin="10,215,238,56" RenderTransformOrigin="0.494,0.245" Click="btnKorisnici_Click"/>
+        <Button x:Name="btnKorisnici_Copy" Content="Log Out" FontSize="10" Margin="255,273,10,10" RenderTransformOrigin="0.494,0.245" Click="btnKorisnici_Copy_Click"/>
     </Grid>
 </Window>

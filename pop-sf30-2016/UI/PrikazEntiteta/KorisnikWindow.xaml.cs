@@ -5,6 +5,9 @@ using SF_30_2016.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +40,14 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
             dgKorisnik.IsSynchronizedWithCurrentItem = true;
 
             dgKorisnik.ColumnWidth = new DataGridLength(1, DataGridLengthUnitType.Star);
+
+            cbSortiraj.Items.Add("Reset");
+            cbSortiraj.Items.Add("Ime");
+            cbSortiraj.Items.Add("Prezime");
+            cbSortiraj.Items.Add("KorisnickoIme");
+
+            cbObrisani.Items.Add("Show");
+            cbObrisani.Items.Add("Hide");
         }
 
         private bool Filter(object obj)
@@ -90,6 +101,68 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
                 e.Cancel = true;
             }
         }
-    
+
+        private void cbSortiraj_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbSortiraj.SelectedIndex == 0)
+            {
+                dgKorisnik.Items.SortDescriptions.Clear();
+            }
+            else if (cbSortiraj.SelectedIndex == 1)
+            {
+                dgKorisnik.Items.SortDescriptions.Clear();
+                dgKorisnik.Items.SortDescriptions.Add(new SortDescription("Ime", ListSortDirection.Descending));
+            }
+            else if (cbSortiraj.SelectedIndex == 2)
+            {
+                dgKorisnik.Items.SortDescriptions.Clear();
+                dgKorisnik.Items.SortDescriptions.Add(new SortDescription("Prezime", ListSortDirection.Descending));
+            }
+            else if (cbSortiraj.SelectedIndex == 3)
+            {
+                dgKorisnik.Items.SortDescriptions.Clear();
+                dgKorisnik.Items.SortDescriptions.Add(new SortDescription("KorisnickoIme", ListSortDirection.Descending));
+            }
+        }
+
+        private void cbObrisani_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbObrisani.SelectedIndex == 0)
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["POP"].ConnectionString))
+                {
+                    con.Open();
+
+
+                    SqlCommand cmd = con.CreateCommand();
+                    SqlDataAdapter da = new SqlDataAdapter();
+
+                    cmd.CommandText = ("SELECT * FROM Korisnik");
+                    DataSet table = new DataSet("Korisnik");
+
+                    da.SelectCommand = cmd;
+                    da.Fill(table);
+                    dgKorisnik.ItemsSource = table.Tables[0].DefaultView;
+                }
+            }
+            else if (cbObrisani.SelectedIndex == 1)
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["POP"].ConnectionString))
+                {
+                    con.Open();
+
+
+                    SqlCommand cmd = con.CreateCommand();
+                    SqlDataAdapter da = new SqlDataAdapter();
+
+                    cmd.CommandText = ("SELECT * FROM Korisnik WHERE Obrisan=0");
+                    DataSet table = new DataSet("Korisnik");
+
+                    da.SelectCommand = cmd;
+                    da.Fill(table);
+                    dgKorisnik.ItemsSource = table.Tables[0].DefaultView;
+                }
+            }
+        }
     }
 }

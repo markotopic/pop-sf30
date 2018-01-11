@@ -2,9 +2,30 @@
 <ArrayOfAkcija xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Akcija>
     <Obrisan>false</Obrisan>
-    <Popust>20</Popust>
-    <DatumZavrsetka>0001-01-01T00:00:00</DatumZavrsetka>
-    <DatumPocetka>0001-01-01T00:00:00</DatumPocetka>
-    <Id>0</Id>
+    <Popust>15.00</Popust>
+    <DatumZavrsetka>2004-05-23T14:25:10</DatumZavrsetka>
+    <DatumPocetka>2004-05-23T14:25:10</DatumPocetka>
+    <Id>1</Id>
+  </Akcija>
+  <Akcija>
+    <Obrisan>false</Obrisan>
+    <Popust>20.00</Popust>
+    <DatumZavrsetka>2004-05-23T14:25:10</DatumZavrsetka>
+    <DatumPocetka>2004-05-23T14:25:10</DatumPocetka>
+    <Id>2</Id>
+  </Akcija>
+  <Akcija>
+    <Obrisan>false</Obrisan>
+    <Popust>45.00</Popust>
+    <DatumZavrsetka>2004-01-01T00:00:00</DatumZavrsetka>
+    <DatumPocetka>2004-02-23T00:00:00</DatumPocetka>
+    <Id>1002</Id>
+  </Akcija>
+  <Akcija>
+    <Obrisan>true</Obrisan>
+    <Popust>50.00</Popust>
+    <DatumZavrsetka>2018-01-31T00:00:00</DatumZavrsetka>
+    <DatumPocetka>2018-01-10T13:27:31.253</DatumPocetka>
+    <Id>2002</Id>
   </Akcija>
 </ArrayOfAkcija>

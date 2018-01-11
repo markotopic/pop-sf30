@@ -38,40 +38,37 @@ namespace pop_sf30_2016.UI.IzmenaEntiteta
             this.akcija = akcija;
             this.operacija = operacija;
 
-            tbDatumPocetka.DataContext = akcija;
-            tbDatumZavrsetka.DataContext = akcija;
+
+            dpDatumPocetka.DataContext = akcija;
+            dpDatumZavrsetka.DataContext = akcija;
             tbPopust.DataContext = akcija;
+
+            TimeSpan razlika = new TimeSpan(14, 0, 0, 0);
+
+            DateTime datumPocetka = DateTime.Now;
+            DateTime datumZavrsetka = datumPocetka.Add(razlika);
+
+            akcija.DatumPocetka = datumPocetka;
+            akcija.DatumZavrsetka = datumZavrsetka;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            var lista = Projekat.Instace.Akcija;
+            var lista = Projekat.Instace.akcija;
 
             switch (operacija)
             {
                 case Operacija.DODAVANJE:
-                    akcija.Id = lista.Count + 1;
-                    lista.Add(akcija);
+                    Akcija.Create(akcija);
                     this.Close();
                     break;
                 case Operacija.IZMENA:
-                    foreach (var n in lista)
-                    {
-                        if (n.Id == akcija.Id)
-                        {
-                            n.DatumPocetka = akcija.DatumPocetka;
-                            n.DatumZavrsetka = akcija.DatumZavrsetka;
-                            n.Popust = akcija.Popust;
-                            this.Close();
-                            break;
-                        }
-                    }
-                    break;
-                default:
+                    Akcija.Update(akcija);
+                    this.Close();
                     break;
             }
-            GenericSerializer.Serialize("akcije.xml", lista);
         }
 
         private void Izlaz_Click(object sender, RoutedEventArgs e)

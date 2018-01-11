@@ -39,6 +39,21 @@ namespace pop_sf30_2016
 
             dgNamestaj.ColumnWidth = new DataGridLength(1, DataGridLengthUnitType.Star);
 
+            if (Projekat.Instace.Aktivan == false)
+            {
+                btnDodaj.Visibility = Visibility.Hidden;
+                btnIzmeni.Visibility = Visibility.Hidden;
+                btnObrisi.Visibility = Visibility.Hidden;
+            }
+
+            cbSortiraj.Items.Add("Reset");
+            cbSortiraj.Items.Add("Naziv");
+            cbSortiraj.Items.Add("Sifra");
+            cbSortiraj.Items.Add("Cena");
+            cbSortiraj.Items.Add("Kolcini");
+            cbSortiraj.Items.Add("Akciji");
+            cbSortiraj.Items.Add("Tipu namestaja");
+
         }
 
         private bool NamestajFilter(object obj)
@@ -59,6 +74,9 @@ namespace pop_sf30_2016
             };
             var namestajProzor = new NamestajWindow(noviNamestaj, NamestajWindow.Operacija.DODAVANJE);
             namestajProzor.Show();
+
+            //this.DialogResult = true;
+
         }
 
         private void IzmeniNamestaj(object sender, RoutedEventArgs e)
@@ -95,7 +113,48 @@ namespace pop_sf30_2016
             {
                 e.Cancel = true;
             }
+            if ((string)e.Column.Header == "AkcijaId")
+            {
+                e.Cancel = true;
+            }
         }
 
+        private void cbSortiraj_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbSortiraj.SelectedIndex == 0)
+            {
+                dgNamestaj.Items.SortDescriptions.Clear();
+            }
+            else if (cbSortiraj.SelectedIndex == 1)
+            {
+                dgNamestaj.Items.SortDescriptions.Clear();
+                dgNamestaj.Items.SortDescriptions.Add(new SortDescription("Naziv", ListSortDirection.Descending));
+            }
+            else if (cbSortiraj.SelectedIndex == 2)
+            {
+                dgNamestaj.Items.SortDescriptions.Clear();
+                dgNamestaj.Items.SortDescriptions.Add(new SortDescription("Sifra", ListSortDirection.Descending));
+            }
+            else if (cbSortiraj.SelectedIndex == 3)
+            {
+                dgNamestaj.Items.SortDescriptions.Clear();
+                dgNamestaj.Items.SortDescriptions.Add(new SortDescription("JedinicnaCena", ListSortDirection.Descending));
+            }
+            else if (cbSortiraj.SelectedIndex == 4)
+            {
+                dgNamestaj.Items.SortDescriptions.Clear();
+                dgNamestaj.Items.SortDescriptions.Add(new SortDescription("Kolicina", ListSortDirection.Descending));
+            }
+            else if (cbSortiraj.SelectedIndex == 5)
+            {
+                dgNamestaj.Items.SortDescriptions.Clear();
+                dgNamestaj.Items.SortDescriptions.Add(new SortDescription("AkcijaId", ListSortDirection.Descending));
+            }
+            else if (cbSortiraj.SelectedIndex == 6)
+            {
+                dgNamestaj.Items.SortDescriptions.Clear();
+                dgNamestaj.Items.SortDescriptions.Add(new SortDescription("TipNamestajaId", ListSortDirection.Descending));
+            }
+        }
     }
 }

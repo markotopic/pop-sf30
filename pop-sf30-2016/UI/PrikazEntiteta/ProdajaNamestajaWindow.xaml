@@ -8,9 +8,11 @@
         Title="ProdajaNamestajaWindow" Height="448" Width="897">
     <Grid>
         <DataGrid AutoGenerateColumns="True" Margin="12,12,12,57" Name="dgProdajaNamestaja" IsReadOnly="True" FontSize="16" AutoGeneratingColumn="dgProdajaNamestaja_AutoGeneratingColumn" />
-        <Button Content="Obriši" Height="39" HorizontalAlignment="Left" Margin="165,0,0,12" Name="btnDelete" VerticalAlignment="Bottom" Width="66"/>
-        <Button Content="Zatvori" Height="39" HorizontalAlignment="Right" Margin="0,0,12,12" Name="btnClose" VerticalAlignment="Bottom" Width="102" />
-        <Button Content="Dodaj" Height="39" HorizontalAlignment="Left" Margin="12,0,0,12" Name="btnAdd" VerticalAlignment="Bottom" Width="66"  />
-        <Button Content="Izmeni" Height="39" HorizontalAlignment="Left" Margin="84,0,0,12" Name="btnUpdate" VerticalAlignment="Bottom" Width="75" Click="btnUpdate_Click"/>
+        <!--<Button Content="Obriši" Height="39" HorizontalAlignment="Left" Margin="165,0,0,12" Name="btnDelete" VerticalAlignment="Bottom" Width="66"/>-->
+        <Button Content="Zatvori" Height="39" HorizontalAlignment="Right" Margin="0,0,12,12" Name="btnClose" VerticalAlignment="Bottom" Width="102" Click="btnClose_Click" />
+        <!--<Button Content="Dodaj" Height="39" HorizontalAlignment="Left" Margin="12,0,0,12" Name="btnAdd" VerticalAlignment="Bottom" Width="66"  />-->
+        <Button Content="Otvori Racun" Height="39" HorizontalAlignment="Left" Margin="92,0,0,12" Name="btnUpdate" VerticalAlignment="Bottom" Width="75" Click="btnUpdate_Click"/>
+
+        <Button Content="Novi racun" Height="39" HorizontalAlignment="Left" Margin="12,0,0,12" Name="btnRacun" VerticalAlignment="Bottom" Width="75" Click="Racun_Click"  />
     </Grid>
 </Window>

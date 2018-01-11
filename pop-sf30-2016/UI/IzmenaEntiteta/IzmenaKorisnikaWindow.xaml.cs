@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static SF_30_2016.Model.Korisnik;
 
 namespace pop_sf30_2016.UI.IzmenaEntiteta
 {

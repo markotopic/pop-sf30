@@ -30,13 +30,38 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
         {
             InitializeComponent();
 
-            view = CollectionViewSource.GetDefaultView(Projekat.Instace.Akcija);
+            view = CollectionViewSource.GetDefaultView(Projekat.Instace.akcija);
             view.Filter = AkcijaFilter;
             dgAkcija.ItemsSource = view;
             dgAkcija.IsSynchronizedWithCurrentItem = true;
 
             dgAkcija.ColumnWidth = new DataGridLength(1, DataGridLengthUnitType.Star);
 
+            if (Projekat.Instace.Aktivan == false)
+            {
+                btnDodaj.Visibility = Visibility.Hidden;
+                btnIzmeni.Visibility = Visibility.Hidden;
+                btnObrisi.Visibility = Visibility.Hidden;
+            }
+
+            cbSortiraj.Items.Add("Reset");
+            cbSortiraj.Items.Add("Datum Pocetka");
+            cbSortiraj.Items.Add("Datum Zavrsetka");
+            cbSortiraj.Items.Add("Popust");
+
+            AktivneAkcije();
+
+        }
+
+        public static void AktivneAkcije()
+        {
+            foreach (Akcija akcija in Projekat.Instace.akcija)
+            {
+                if (akcija.DatumZavrsetka < DateTime.Now)
+                {
+                    Akcija.Delete(akcija);
+                }
+            }
         }
 
         private bool AkcijaFilter(object obj)
@@ -70,18 +95,8 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
             if (MessageBox.Show($"Da li ste sigurni da zelite da obrisete: { izabrani.DatumPocetka}?", "Brisanje", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
 
-                foreach (var n in Projekat.Instace.Akcija)
-                {
-                    if (n.Id == izabrani.Id)
-                    {
-                        n.Obrisan = true;
-                        view.Refresh();
-                        break;
-                    }
-                }
-
-                GenericSerializer.Serialize("akcije.xml", Projekat.Instace.Akcija);
-
+                Akcija.Delete(izabrani);
+                view.Refresh();
             }
         }
 
@@ -99,6 +114,29 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
             if ((string)e.Column.Header == "Id")
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void cbSortiraj_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbSortiraj.SelectedIndex == 0)
+            {
+                dgAkcija.Items.SortDescriptions.Clear();
+            }
+            else if (cbSortiraj.SelectedIndex == 1)
+            {
+                dgAkcija.Items.SortDescriptions.Clear();
+                dgAkcija.Items.SortDescriptions.Add(new SortDescription("DatumPocetka", ListSortDirection.Descending));
+            }
+            else if (cbSortiraj.SelectedIndex == 2)
+            {
+                dgAkcija.Items.SortDescriptions.Clear();
+                dgAkcija.Items.SortDescriptions.Add(new SortDescription("DatumZavrsetka", ListSortDirection.Descending));
+            }
+            else if (cbSortiraj.SelectedIndex == 3)
+            {
+                dgAkcija.Items.SortDescriptions.Clear();
+                dgAkcija.Items.SortDescriptions.Add(new SortDescription("Popust", ListSortDirection.Descending));
             }
         }
     }

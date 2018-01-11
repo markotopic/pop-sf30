@@ -37,6 +37,10 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
             dgTipNamestaja.IsSynchronizedWithCurrentItem = true;
 
             dgTipNamestaja.ColumnWidth = new DataGridLength(1, DataGridLengthUnitType.Star);
+
+            cbSortiraj.Items.Add("Reset");
+            cbSortiraj.Items.Add("Nazivu");
+            
         }
 
         private bool Filter(object obj)
@@ -87,6 +91,19 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
             if ((string)e.Column.Header == "Id")
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void cbSortiraj_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbSortiraj.SelectedIndex == 0)
+            {
+                dgTipNamestaja.Items.SortDescriptions.Clear();
+            }
+            else if (cbSortiraj.SelectedIndex == 1)
+            {
+                dgTipNamestaja.Items.SortDescriptions.Clear();
+                dgTipNamestaja.Items.SortDescriptions.Add(new SortDescription("Naziv", ListSortDirection.Descending));
             }
         }
     }

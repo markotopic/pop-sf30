@@ -17,13 +17,6 @@ namespace SF_30_2016.Model
         private string naziv;
         private bool obrisan;
 
-        //private int tipNamestajaId;
-        //public int TipNamestajaId
-        //{
-        //    get { return tipNamestajaId; }
-        //    set { tipNamestajaId = value; OnPropertyChanged("TipNamestajaId"); }
-        //}
-
         public bool Obrisan
         {
             get { return obrisan; }

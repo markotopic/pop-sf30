@@ -68,7 +68,7 @@ namespace SF_30_2016.Model
             }
         }
 
-        #region Database
+        #region CRUD
 
         public static ObservableCollection<DodatnaUsluga> GetAll()
         {

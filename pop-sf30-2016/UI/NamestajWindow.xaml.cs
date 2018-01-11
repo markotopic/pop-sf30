@@ -39,11 +39,14 @@ namespace pop_sf30_2016.UI
             this.operacija = operacija;
 
             cbTipNamestaja.ItemsSource = Projekat.Instace.tipnamestaja;
+            cbAkcija.ItemsSource = Projekat.Instace.akcija;
 
             tbNazi.DataContext = namestaj;
             cbTipNamestaja.DataContext = namestaj;
+            cbAkcija.DataContext = namestaj;
             tbJedinicnaCena.DataContext = namestaj;
-            tbSifra.DataContext = namestaj;
+            //tbSifra.DataContext = namestaj;
+            tbKolicinaUMagacinu.DataContext = namestaj;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

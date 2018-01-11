@@ -13,14 +13,14 @@ namespace SF_30_2016.Model
 {
     [Serializable]
 
-    public enum TipKorisnika
+    public class Korisnik : INotifyPropertyChanged, ICloneable
     {
-        Administrator,
-        Prodavac
-    }
+        public enum TipKorisnika
+        {
+            Administrator,
+            Prodavac
+        }
 
-    public class Korisnik : INotifyPropertyChanged
-    {
         private int id;
         private string ime;
         private string prezime;
@@ -35,10 +35,10 @@ namespace SF_30_2016.Model
             set { obrisan = value; OnPropertyChanged("Obrisan"); }
         }
 
-        public TipKorisnika TipKorisnika
+        public TipKorisnika TipKorisnikaa
         {
             get { return tipKorisnika; }
-            set { tipKorisnika = value; OnPropertyChanged("TipKorisnika"); }
+            set { tipKorisnika = value; OnPropertyChanged("TipKorisnikaa"); }
         }
 
         public string Sifra
@@ -73,6 +73,20 @@ namespace SF_30_2016.Model
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public object Clone()
+        {
+            return new Korisnik()
+            {
+                id = Id,
+                ime = Ime,
+                prezime = Prezime,
+                korisnickoIme = KorisnickoIme,
+                sifra = Sifra,
+                obrisan = Obrisan,
+                tipKorisnika = TipKorisnikaa
+            };
+        }
+
         protected void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
@@ -86,7 +100,7 @@ namespace SF_30_2016.Model
             return $"{tipKorisnika}";
         }
 
-        #region Database
+        #region CRUD
 
         public static ObservableCollection<Korisnik> GetAll()
         {
@@ -115,6 +129,15 @@ namespace SF_30_2016.Model
                     //tn.TipKorisnika = int.Parse(row["TipKorisnika"].ToString());
                     tn.Obrisan = bool.Parse(row["Obrisan"].ToString());
 
+                    if (row["TipKorisnika"].ToString() == "0")
+                    {
+                        tn.TipKorisnikaa = Korisnik.TipKorisnika.Administrator;
+                    }
+                    if (row["TipKorisnika"].ToString() == "1")
+                    {
+                        tn.TipKorisnikaa = Korisnik.TipKorisnika.Prodavac;
+                    }
+
                     korisnik.Add(tn);
                 }
             }
@@ -138,7 +161,7 @@ namespace SF_30_2016.Model
                 cmd.Parameters.AddWithValue("Prezime", tn.Prezime);
                 cmd.Parameters.AddWithValue("KorisnickoIme", tn.KorisnickoIme);
                 cmd.Parameters.AddWithValue("Sifra", tn.Sifra);
-                cmd.Parameters.AddWithValue("TipKorisnika", tn.TipKorisnika);
+                cmd.Parameters.AddWithValue("TipKorisnika", tn.TipKorisnikaa);
                 cmd.Parameters.AddWithValue("Obrisan", tn.Obrisan);
 
                 int newId = int.Parse(cmd.ExecuteScalar().ToString());  // ExecuteScalar izvrsava query
@@ -166,7 +189,7 @@ namespace SF_30_2016.Model
                 cmd.Parameters.AddWithValue("Prezime", tn.Prezime);
                 cmd.Parameters.AddWithValue("KorisnickoIme", tn.KorisnickoIme);
                 cmd.Parameters.AddWithValue("Sifra", tn.Sifra);
-                cmd.Parameters.AddWithValue("TipKorisnika", tn.TipKorisnika);
+                cmd.Parameters.AddWithValue("TipKorisnika", tn.TipKorisnikaa);
                 cmd.Parameters.AddWithValue("Obrisan", tn.Obrisan);
 
                 cmd.ExecuteNonQuery();
@@ -184,7 +207,7 @@ namespace SF_30_2016.Model
                     korisnici.Prezime = tn.Prezime;
                     korisnici.KorisnickoIme = tn.KorisnickoIme;
                     korisnici.Sifra = tn.Sifra;
-                    korisnici.TipKorisnika = tn.TipKorisnika;
+                    korisnici.TipKorisnikaa = tn.TipKorisnikaa;
                     korisnici.Obrisan = tn.Obrisan;
                     break;
                 }
@@ -197,7 +220,6 @@ namespace SF_30_2016.Model
             tn.Obrisan = true;
             Update(tn);
         }
-
 
         #endregion
 

@@ -30,13 +30,20 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
         {
             InitializeComponent();
 
-            view = CollectionViewSource.GetDefaultView(Projekat.Instace.ProdajaNamestaja);
+            view = CollectionViewSource.GetDefaultView(Projekat.Instace.prodajanamestaja);
 
             dgProdajaNamestaja.ItemsSource = view;
             dgProdajaNamestaja.IsSynchronizedWithCurrentItem = true;
 
             dgProdajaNamestaja.ColumnWidth = new DataGridLength(1, DataGridLengthUnitType.Star);
-                
+
+            if (Projekat.Instace.Aktivan == false)
+            {
+                //btnAdd.Visibility = Visibility.Hidden;
+                //btnUpdate.Visibility = Visibility.Hidden;
+                //btnDelete.Visibility = Visibility.Hidden;
+            }
+
         }
 
         private void dgProdajaNamestaja_AutoGeneratingColumn(object sender,
@@ -46,7 +53,7 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
             {
                 e.Cancel = true;
             }
-            if ((string)e.Column.Header == "DodatneUsluge")
+            if ((string)e.Column.Header == "Obrisan")
             {
                 e.Cancel = true;
             }
@@ -60,8 +67,21 @@ namespace pop_sf30_2016.UI.PrikazEntiteta
         {
             var selektovani = (ProdajaNamestaja)dgProdajaNamestaja.SelectedItem;
 
-            var a = new IzmenaProdajeNamestajaWindow(selektovani, IzmenaProdajeNamestajaWindow.Operacija.IZMENA);
+            var a = new RacunWindow(selektovani, RacunWindow.Operacija.IZMENA);
             a.Show();
+        }
+
+        private void Racun_Click(object sender, RoutedEventArgs e)
+        {
+            var noviRacun = new ProdajaNamestaja();
+
+            var a = new RacunWindow(noviRacun, RacunWindow.Operacija.DODAVANJE);
+            a.Show();
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

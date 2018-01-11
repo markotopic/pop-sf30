@@ -1,0 +1,49 @@
+﻿<Window x:Class="pop_sf30_2016.UI.IzmenaEntiteta.IzmenaSalonaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pop_sf30_2016.UI.IzmenaEntiteta"
+        mc:Ignorable="d"
+        Title="IzmenaSalonaWindow" Height="300" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="117*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="Naziv" HorizontalAlignment="Left" Width="75"></Label>
+        <TextBox Grid.Row="0" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbNazi" Text="{Binding Path=Naziv}" Width="100"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Telefon" HorizontalAlignment="Left" Width="70"/>
+        <TextBox Grid.Row="1" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbTelefon" Width="100" Text="{Binding Path=Telefon}"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Email" HorizontalAlignment="Left" Width="75"/>
+        <TextBox Grid.Row="2" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbEmail" Width="100" Text="{Binding Path=Email}"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="AdresaSajta" HorizontalAlignment="Left" Width="75"/>
+        <TextBox Grid.Row="3" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbAdresaSajta" Text="{Binding Path=AdresaSajta}" Width="100" />
+
+        <Label Grid.Row="4" Grid.Column="0" Content="PIB" HorizontalAlignment="Left" Width="75"/>
+        <TextBox Grid.Row="4" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbPIB" Text="{Binding Path=PIB}" Width="100" />
+
+        <Label Grid.Row="5" Grid.Column="0" Content="MaticniBroj" HorizontalAlignment="Left" Width="75"/>
+        <TextBox Grid.Row="5" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbMaticniBroj" Text="{Binding Path=MaticniBroj}" Width="100" />
+
+        <Label Grid.Row="6" Grid.Column="0" Content="BrZiroRacuna" HorizontalAlignment="Left" Width="75"/>
+        <TextBox Grid.Row="6" Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Name="tbBrZiroRacuna" Text="{Binding Path=BrZiroRacuna}" Width="100" />
+
+        <Button Content="Sacuvaj" HorizontalAlignment="Right" Margin="0,63,71,10" Grid.Row="7" Width="46" Click="Button_Click" Grid.Column="2"/>
+        <Button Content="Izlaz" HorizontalAlignment="Right" RenderTransformOrigin="1.009,0.562" Grid.Column="2" Margin="0,64,10,10" Grid.Row="7" Width="53" Click="Izlaz_Click"/>
+    </Grid>
+</Window>

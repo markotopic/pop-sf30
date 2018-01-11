@@ -24,10 +24,51 @@ namespace SF_30_2016.Model
         private string sifra;
         private int kolicina;
 
+        private int akcijaId;
+        private Akcija akcija;
+
+        public string Naziv
+        {
+            get { return naziv; }
+            set { naziv = value; OnPropertyChanged("Naziv"); }
+        }
+
+        public string Sifra
+        {
+            get { return sifra = Naziv.Substring(0, 2) + Id.ToString() + TipNamestaja.ToString().Substring(0, 2); }
+            set { sifra = value; OnPropertyChanged("Sifra"); }
+        }
+
+        public int AkcijaId
+        {
+            get { return akcijaId; }
+            set { akcijaId = value; }
+        }
+
+
         public int Kolicina
         {
             get { return kolicina; }
             set { kolicina = value; OnPropertyChanged("Kolicina"); }
+        }
+
+        [XmlIgnore]
+        public Akcija Akcija
+        {
+            get
+            {
+                if (akcija == null)
+                {
+                    akcija = Akcija.GetById(AkcijaId);
+                }
+                return akcija;
+            }
+            set
+            {
+                akcija = value;
+                AkcijaId = akcija.Id;
+                OnPropertyChanged("Akcija");
+            }
         }
 
         [XmlIgnore]
@@ -47,12 +88,6 @@ namespace SF_30_2016.Model
                 TipNamestajaId = tipNamestaja.Id;
                 OnPropertyChanged("TipNamestaja");
             }
-        }
-
-        public string Sifra
-        {
-            get { return sifra; }
-            set { sifra = value; OnPropertyChanged("Sifra"); }
         }
 
 
@@ -76,19 +111,7 @@ namespace SF_30_2016.Model
             set { tipNamestajaId = value; OnPropertyChanged("TipNamestajaId"); }
         }
 
-
-        //public double Cena
-        //{
-        //    get { return cena; }
-        //    set { cena = value; OnPropertyChanged("Cena"); }
-        //}
-
-
-        public string Naziv
-        {
-            get { return naziv; }
-            set { naziv = value; OnPropertyChanged("Naziv"); }
-        }
+        
 
         public int Id
         {
@@ -151,12 +174,13 @@ namespace SF_30_2016.Model
 
                     tn.Id = int.Parse(row["Id"].ToString());
                     tn.TipNamestajaId = int.Parse(row["TipNamestajaId"].ToString());
+                    tn.AkcijaId = int.Parse(row["AkcijaId"].ToString());
                     tn.Naziv = row["Naziv"].ToString();
                     tn.Sifra = row["Sifra"].ToString();
                     tn.JedinicnaCena = double.Parse(row["Cena"].ToString());
                     tn.Kolicina = int.Parse(row["Kolicina"].ToString());
                     tn.Obrisan = bool.Parse(row["Obrisan"].ToString());
-
+                
                     namestaj.Add(tn);
                 }
             }
@@ -172,7 +196,7 @@ namespace SF_30_2016.Model
                 SqlCommand cmd = con.CreateCommand();
                 DataSet ds = new DataSet();  
 
-                cmd.CommandText = "INSERT INTO Namestaj (Naziv, TipNamestajaId, Cena, Kolicina, Sifra, Obrisan) VALUES (@Naziv, @TipNamestajaId, @Cena, @Kolicina, @Sifra, @Obrisan);";
+                cmd.CommandText = "INSERT INTO Namestaj (Naziv, TipNamestajaId, AkcijaId, Cena, Kolicina, Sifra, Obrisan) VALUES (@Naziv, @TipNamestajaId, @AkcijaId, @Cena, @Kolicina, @Sifra, @Obrisan);";
                 cmd.CommandText += "SELECT SCOPE_IDENTITY();";
 
                 //cmd.Parameters.AddWithValue("Id", tn.Id);
@@ -180,6 +204,7 @@ namespace SF_30_2016.Model
                 cmd.Parameters.AddWithValue("Cena", tn.jedinicnaCena);
                 cmd.Parameters.AddWithValue("Kolicina", tn.Kolicina);
                 cmd.Parameters.AddWithValue("TipNamestajaId", tn.TipNamestajaId);
+                cmd.Parameters.AddWithValue("AkcijaId", tn.AkcijaId);
                 cmd.Parameters.AddWithValue("Sifra", tn.Sifra);
                 cmd.Parameters.AddWithValue("Obrisan", tn.Obrisan);
 
@@ -202,7 +227,7 @@ namespace SF_30_2016.Model
                 con.Open();
 
                 SqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "UPDATE Namestaj SET Naziv=@Naziv, TipNamestajaId=@TipNamestajaId, Cena=@Cena, Kolicina=@Kolicina, Sifra=@Sifra, Obrisan=@Obrisan WHERE Id=@Id";
+                cmd.CommandText = "UPDATE Namestaj SET Naziv=@Naziv, TipNamestajaId=@TipNamestajaId, AkcijaId=@AkcijaId, Cena=@Cena, Kolicina=@Kolicina, Sifra=@Sifra, Obrisan=@Obrisan WHERE Id=@Id";
                 //cmd.CommandText += "SELECT SCOPE_IDENTITY();";
 
                 cmd.Parameters.AddWithValue("Id", tn.Id);
@@ -210,6 +235,7 @@ namespace SF_30_2016.Model
                 cmd.Parameters.AddWithValue("Cena", tn.jedinicnaCena);
                 cmd.Parameters.AddWithValue("Kolicina", tn.Kolicina);
                 cmd.Parameters.AddWithValue("TipNamestajaId", tn.TipNamestajaId);
+                cmd.Parameters.AddWithValue("AkcijaId", tn.AkcijaId);
                 cmd.Parameters.AddWithValue("Sifra", tn.Sifra);
                 cmd.Parameters.AddWithValue("Obrisan", tn.Obrisan);
 
@@ -227,6 +253,7 @@ namespace SF_30_2016.Model
                     namestaja.JedinicnaCena = tn.JedinicnaCena;
                     namestaja.Kolicina = tn.Kolicina;
                     namestaja.TipNamestajaId = tn.TipNamestajaId;
+                    namestaja.AkcijaId = tn.AkcijaId;
                     namestaja.Sifra = tn.Sifra;
                     namestaja.Obrisan = tn.Obrisan;
                     break;

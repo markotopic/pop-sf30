@@ -122,3 +122,9 @@ D:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\SF-30-2016.csproj.Co
 D:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\pop-sf30-2016.exe
 D:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\pop-sf30-2016.pdb
 C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\pop-sf30-2016_Content.g.cs
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\UI\IzmenaEntiteta\RacunWindow.g.cs
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\UI\IzmenaEntiteta\RacunWindow.baml
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\UI\PrikazEntiteta\SalonWindow.g.cs
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\UI\PrikazEntiteta\SalonWindow.baml
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\UI\IzmenaEntiteta\IzmenaSalonaWindow.g.cs
+C:\POP-SF-30-2016-gui\pop-sf30-2016\pop-sf30-2016\obj\Debug\UI\IzmenaEntiteta\IzmenaSalonaWindow.baml
